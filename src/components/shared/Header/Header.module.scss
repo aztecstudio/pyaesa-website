@@ -1,0 +1,22 @@
+.Header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+
+  button {
+    height: 3.6rem;
+    background: transparent;
+
+    svg {
+      color: $text-color;
+    }
+
+    &:hover {
+      border-radius: 50%;
+      background-color: $shadow;
+      box-shadow: 0 2px 4px $shadow;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { Montserrat } from 'next/font/google';
 import '@/scss/globals.scss';
+import { Header } from '@/components';
 
 const montserrat = Montserrat({
 	weight: ['300', '500', '700'],
@@ -15,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body className={montserrat.className}>{children}</body>
+			<body className={montserrat.className}>
+				<Header />
+				{children}
+			</body>
 		</html>
 	);
 }
