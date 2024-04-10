@@ -1,0 +1,63 @@
+.Menu {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: $color-primary;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform .5s ease-in-out;
+  display: none;
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  &__containerList {
+    font-size: 1.8rem;
+
+    ul {
+      padding: 0 5rem;
+
+      li {
+        font-weight: bold;
+        margin-bottom: 3rem;
+
+        a {
+          display: block;
+
+          &:hover {
+            width: 100%;
+            border-bottom: 2px solid lightblue;
+          }
+        }
+      }
+    }
+  }
+
+  &__divider {
+    width: 90%;
+    border-top: 1px solid $shadow;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      p {
+        margin-left: .5rem;
+      }
+    }
+  }
+
+  @include mobile {
+    display: block;
+  }
+}

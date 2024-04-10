@@ -8,6 +8,7 @@
   button {
     height: 3.6rem;
     background: transparent;
+    display: none;
 
     svg {
       color: $text-color;
@@ -17,6 +18,10 @@
       border-radius: 50%;
       background-color: $shadow;
       box-shadow: 0 2px 4px $shadow;
+    }
+
+    @include mobile {
+      display: block;
     }
   }
 }
