@@ -1,0 +1,63 @@
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background-color: #1c1c1d;
+  color: $color-primary;
+
+  &__socialMedia {
+    text-align: center;
+
+    svg {
+      margin-right: 1rem;
+      padding: 1rem;
+      background-color: $shadow;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-primary;
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    border-top: 1px solid $color-primary;
+    margin: 2rem auto 1rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p,
+    span {
+      font-size: .8rem;
+
+      a {
+        color: $color-primary;
+      }
+    }
+  }
+
+  @include tablet {
+    padding: 2rem 4rem;
+
+    &__info {
+
+      p,
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @include desktop {
+    padding: 2rem 8rem;
+  }
+}
