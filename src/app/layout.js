@@ -1,6 +1,6 @@
 import { Montserrat } from 'next/font/google';
 import '@/scss/globals.scss';
-import { Header, Menu } from '@/components';
+import { Header, Hero, Menu } from '@/components';
 import ContextProvider from '@/Context';
 
 const montserrat = Montserrat({
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
 					<Header />
 					<Menu />
 				</ContextProvider>
+				<Hero />
 				{children}
 			</body>
 		</html>
