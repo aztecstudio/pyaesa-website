@@ -13,10 +13,12 @@ export const Header = () => {
 
 	return (
 		<header className={styles.Header}>
-			<h1>Pyaesa Logo</h1>
-			<button onClick={handleMenu}>
-				<Menu />
-			</button>
+			<nav className={styles.Header__navbar}>
+				<h1>Pyaesa Logo</h1>
+				<button onClick={handleMenu}>
+					<Menu />
+				</button>
+			</nav>
 		</header>
 	);
 };

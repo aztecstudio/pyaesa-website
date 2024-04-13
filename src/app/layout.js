@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 					<Menu />
 				</ContextProvider>
 				<Hero />
-				{children}
+				<main>{children}</main>
 				<Footer />
 			</body>
 		</html>

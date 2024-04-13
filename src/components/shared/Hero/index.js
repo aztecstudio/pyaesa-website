@@ -20,15 +20,13 @@ export const Hero = () => {
 			>
 				{[1, 2, 3, 4].map(slide => (
 					<SwiperSlide key={`slide-${slide}`}>
-						<div>
-							<Image
-								src={`/images/slide-${slide}.jpg`}
-								alt={`Slide-${slide} image`}
-								width={1240}
-								height={304}
-								priority
-							/>
-						</div>
+						<Image
+							src={`/images/slide-${slide}.jpg`}
+							alt={`Slide-${slide} image`}
+							width={1240}
+							height={304}
+							priority
+						/>
 					</SwiperSlide>
 				))}
 			</Swiper>

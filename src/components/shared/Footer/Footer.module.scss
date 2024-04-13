@@ -1,10 +1,6 @@
 .Footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 2rem;
-  background-color: #1c1c1d;
+  background-color: $color-secondary;
   color: $color-primary;
 
   &__socialMedia {

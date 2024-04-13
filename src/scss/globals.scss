@@ -1,6 +1,7 @@
 @import 'variables.scss';
 
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   background: $color-primary;
@@ -9,6 +10,10 @@ body {
 
 html {
   font-size: 62.5%;
+}
+
+main {
+  min-height: 100vh;
 }
 
 button {
