@@ -1,10 +1,13 @@
 @import 'variables.scss';
 
-body {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background: $color-primary;
+}
+
+body {
+  background: #669bbc;
   color: $text-color;
 }
 
@@ -14,12 +17,30 @@ html {
 
 main {
   min-height: 100vh;
+  padding-bottom: 4rem;
+  background: $color-primary;
+  box-shadow: 10px 0 15px -5px $shadow, -10px 0 15px -5px $shadow;
+
+  @media (min-width: 796px) {
+    margin: 0 2rem;
+  }
+
+  @include desktop {
+    margin: 0 6rem;
+  }
 }
 
 button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+input,
+textarea {
+  outline: none;
+  color: $text-color;
+  font-size: 1.4rem;
 }
 
 ul {
@@ -29,4 +50,10 @@ ul {
 a {
   text-decoration: none;
   color: $text-color;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 400;
 }

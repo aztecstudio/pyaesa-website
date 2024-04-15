@@ -1,7 +1,12 @@
+import { Branches, Contact, MainProducts, Overview } from '@/components';
+
 export default function Home() {
 	return (
-		<main>
-			<h2>Home</h2>
-		</main>
+		<>
+			<Overview />
+			<MainProducts />
+			<Branches />
+			<Contact />
+		</>
 	);
 }

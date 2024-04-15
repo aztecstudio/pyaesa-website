@@ -1,12 +1,10 @@
-import { Facebook, Instagram } from 'react-feather';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
 	return (
 		<footer className={styles.Footer}>
-			<section className={styles.Footer__socialMedia}>
-				<Facebook size={20} />
-				<Instagram size={20} />
+			<section className={styles.Footer__text}>
+				<p>Sherwin Williams - Distribuidor autorizado</p>
 			</section>
 			<div className={styles.Footer__divider}></div>
 			<section className={styles.Footer__info}>

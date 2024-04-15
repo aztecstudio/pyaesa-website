@@ -1,0 +1,28 @@
+.Form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  &__inputGroup {
+    @include flex(column);
+    width: 100%;
+    margin-bottom: 1.6rem;
+    @include input();
+  }
+
+  &__textArea {
+    grid-column: 1 / -1;
+    @include flex(column);
+    width: 100%;
+    @include input();
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    gap: 1rem 4rem;
+    margin: 0 6rem;
+  }
+}

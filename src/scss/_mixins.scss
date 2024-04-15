@@ -1,5 +1,5 @@
 @mixin tablet {
-  @media (min-width: 481px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
@@ -8,4 +8,57 @@
   @media (min-width: 900px) {
     @content;
   }
+}
+
+@mixin flex($direction: row, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin btn ($maxWidth: 250px) {
+  width: 80%;
+  max-width: $maxWidth;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  color: $color-primary;
+  background-color: $main-contrast;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: .3rem;
+}
+
+@mixin card {
+  position: relative;
+  min-height: 200px;
+  min-width: 200px;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #606060;
+  background-color: #f8f7fd;
+  border-radius: .3rem;
+  box-shadow: 0 2px 4px $shadow;
+}
+
+@mixin input {
+  label {
+    margin-bottom: .4rem;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid #707070;
+    border-radius: .5rem;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #669bbc;
+    }
+  }
+
 }

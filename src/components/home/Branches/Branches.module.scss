@@ -1,0 +1,72 @@
+.Branches {
+  padding: 2rem 4rem;
+
+  &__card {
+    @include card();
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+      text-align: left;
+      padding: 2rem 2rem 0;
+    }
+
+    a {
+      @include btn(250px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .5s ease;
+    }
+
+    &:hover {
+
+      p,
+      img {
+        opacity: 0.5;
+      }
+
+      a {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__img {
+    text-align: center;
+    margin-top: 3rem;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  @include desktop {
+
+    &__card {
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+
+      p {
+        width: 50%;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        padding: 0;
+      }
+    }
+
+    &__ {
+      width: 50%;
+    }
+  }
+}

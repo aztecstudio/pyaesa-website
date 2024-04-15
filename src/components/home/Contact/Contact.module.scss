@@ -1,0 +1,59 @@
+.Contact {
+  padding: 2rem 4rem;
+
+  &__card {
+    @include card();
+    position: relative;
+    padding: 3rem;
+
+    h3 {
+      margin-bottom: 3rem;
+      font-weight: 500;
+    }
+  }
+
+  &__contactUs {
+    display: flex;
+    @include flex(column, null, center);
+    padding: 1rem 0;
+
+    section {
+      @include flex(column);
+
+      div {
+        @include flex(row, inherit, center);
+        margin: 1rem 0;
+        margin-left: 2rem;
+
+        p {
+          margin-left: .5rem;
+          font-weight: 400;
+        }
+      }
+    }
+
+    a {
+      @include btn();
+      display: inline-block;
+      margin-top: 2rem;
+
+      @include desktop {
+        margin-top: 0;
+      }
+    }
+
+    @include desktop {
+      @include flex(row, space-around, center);
+    }
+  }
+
+  &__form {
+    padding: 1rem 0;
+
+    h3 {
+      margin: 3rem 0;
+      font-weight: 500;
+    }
+  }
+
+}

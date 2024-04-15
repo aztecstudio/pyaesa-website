@@ -5,7 +5,7 @@ import ContextProvider from '@/Context';
 import { Footer } from '@/components/shared/Footer';
 
 const montserrat = Montserrat({
-	weight: ['300', '500', '700'],
+	weight: ['300', '400', '500', '700'],
 	subsets: ['latin'],
 });
 
@@ -23,8 +23,10 @@ export default function RootLayout({ children }) {
 					<Header />
 					<Menu />
 				</ContextProvider>
-				<Hero />
-				<main>{children}</main>
+				<main>
+					<Hero />
+					{children}
+				</main>
 				<Footer />
 			</body>
 		</html>
