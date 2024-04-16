@@ -14,6 +14,33 @@
     align-items: center;
     padding: 0 2rem;
 
+    ul {
+      display: none;
+      gap: 1.6rem;
+
+      li {
+        position: relative;
+        font-weight: 500;
+        @include linkHover(-2px);
+
+        a {
+          color: $color-primary;
+          font-size: 1.6rem;
+        }
+
+        .linkActive {
+          border-bottom: 2px solid $contrast-secondary;
+        }
+      }
+
+      @include tablet {
+        @include flex(row);
+      }
+
+      @include desktop {
+        gap: 3rem;
+      }
+    }
 
     button {
       width: 3.6rem;
@@ -32,6 +59,10 @@
       @include tablet {
         display: none;
       }
+    }
+
+    @include tablet {
+      justify-content: space-around;
     }
   }
 }

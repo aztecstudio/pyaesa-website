@@ -5,9 +5,11 @@ import { Context } from '@/Context';
 import { Mail, MapPin, Phone } from 'react-feather';
 import Link from 'next/link';
 import { PAGES } from '@/components/consts';
+import { usePathname } from 'next/navigation';
 
 export const Menu = () => {
 	const { isHidden, setIsHidden } = useContext(Context);
+	const pathname = usePathname();
 
 	return (
 		<div className={`${styles.Menu} ${isHidden ? '' : styles.visible}`}>
@@ -15,7 +17,11 @@ export const Menu = () => {
 				<ul>
 					{PAGES.map((item, i) => (
 						<li key={`${item.label}-${i}`}>
-							<Link href={item.pathname} onClick={() => setIsHidden(true)}>
+							<Link
+								href={item.pathname}
+								onClick={() => setIsHidden(true)}
+								className={pathname === item.pathname ? styles.linkActive : ''}
+							>
 								{item.label}
 							</Link>
 						</li>

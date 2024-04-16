@@ -61,5 +61,23 @@
       border: 1px solid #669bbc;
     }
   }
+}
 
+@mixin linkHover($bottom: 0) {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: $bottom;
+    width: 100%;
+    height: 2px;
+    background-color: $contrast-secondary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }
