@@ -1,6 +1,4 @@
 .Branches {
-  padding: 2rem;
-
   &__card {
     @include card();
     @include flex(column, center, center);
@@ -34,10 +32,6 @@
       margin: auto;
       object-fit: cover;
     }
-  }
-
-  @include mobileLg {
-    padding: 2rem 4rem;
   }
 
   @include desktop {

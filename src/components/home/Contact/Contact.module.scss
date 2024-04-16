@@ -1,6 +1,4 @@
 .Contact {
-  padding: 2rem;
-
   &__card {
     @include card();
     position: relative;
@@ -22,7 +20,6 @@
       div {
         @include flex(row, inherit, center);
         margin: 1rem 0;
-        margin-left: 2rem;
 
         p {
           margin-left: .5rem;
@@ -49,10 +46,6 @@
       margin: 3rem 0;
       font-weight: 500;
     }
-  }
-
-  @include mobileLg {
-    padding: 2rem 4rem;
   }
 
   @include desktop {

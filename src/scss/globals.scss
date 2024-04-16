@@ -16,12 +16,21 @@ html {
 }
 
 main {
+  position: relative;
   min-height: 100vh;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
   background: $color-primary;
   box-shadow: 10px 0 15px -5px $shadow, -10px 0 15px -5px $shadow;
 
-  @media (min-width: 796px) {
+  &>section:not(:first-child) {
+    padding: 2rem;
+
+    @include mobileLg {
+      padding: 2rem 4rem;
+    }
+  }
+
+  @include tablet {
     margin: 0 2rem;
   }
 
@@ -55,8 +64,12 @@ a {
 
 h2 {
   margin-bottom: 2rem;
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 400;
+
+  @include mobileLg {
+    font-size: 3rem;
+  }
 }
 
 p,
