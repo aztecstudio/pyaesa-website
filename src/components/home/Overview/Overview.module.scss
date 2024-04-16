@@ -1,6 +1,6 @@
 .Overview {
   height: auto;
-  padding: 2rem 4rem;
+  padding: 0 2rem 2rem;
   font-size: 1.4rem;
   text-align: center;
 
@@ -29,6 +29,10 @@
     display: inline-block;
     margin-top: 4rem;
     text-align: center;
+  }
+
+  @include mobileLg {
+    padding: 2rem 4rem;
   }
 
   @include desktop {

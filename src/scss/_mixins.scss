@@ -1,3 +1,9 @@
+@mixin mobileLg {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: 768px) {
     @content;
@@ -18,7 +24,7 @@
 }
 
 @mixin btn ($maxWidth: 250px, $bgColor) {
-  width: 80%;
+  width: 100%;
   max-width: $maxWidth;
   padding: 1.2rem 2rem;
   text-align: center;
@@ -27,6 +33,13 @@
   font-weight: bold;
   text-transform: uppercase;
   border-radius: .3rem;
+  transition: background-color .2s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: $bgColor;
+    outline: 2px solid $bgColor;
+  }
 }
 
 @mixin card {

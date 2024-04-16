@@ -1,71 +1,63 @@
 .Branches {
-  padding: 2rem 4rem;
+  padding: 2rem;
 
   &__card {
     @include card();
-    display: flex;
-    flex-direction: column;
+    @include flex(column, center, center);
     gap: 2rem;
     padding: 3rem;
+  }
 
+  &__description {
     p {
       font-size: 1.4rem;
       line-height: 2.1rem;
       text-align: left;
-      padding: 2rem 2rem 0;
+      padding: 1rem 1rem 0;
+      margin-bottom: 2rem;
     }
 
     a {
       @include btn($bgColor: $contrast-primary);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity .5s ease;
-    }
-
-    &:hover {
-
-      p,
-      img {
-        opacity: 0.5;
-      }
-
-      a {
-        opacity: 1;
-      }
+      display: block;
+      margin: auto;
     }
   }
 
   &__img {
-    text-align: center;
-    margin-top: 3rem;
+    padding: 2rem;
 
     img {
       width: 100%;
       max-width: 400px;
       height: auto;
+      margin: auto;
       object-fit: cover;
     }
   }
 
-  @include desktop {
+  @include mobileLg {
+    padding: 2rem 4rem;
+  }
 
+  @include desktop {
     &__card {
       justify-content: space-around;
       align-items: center;
       flex-direction: row;
+    }
+
+    &__description {
+      width: 50%;
 
       p {
-        width: 50%;
         font-size: 1.6rem;
         line-height: 2.4rem;
         padding: 0;
       }
     }
 
-    &__ {
+    &__img {
       width: 50%;
     }
   }

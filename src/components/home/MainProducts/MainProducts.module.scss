@@ -1,5 +1,5 @@
 .MainProducts {
-  padding: 2rem 4rem;
+  padding: 2rem;
 
   &__gridContainer {
     display: grid;
@@ -24,7 +24,7 @@
 
     &:hover {
       img {
-        opacity: 0.5;
+        opacity: 0.4;
       }
 
       a {
@@ -50,7 +50,7 @@
     font-size: 1.5rem;
 
     a {
-      @include btn($bgColor: $contrast-primary);
+      @include btn(260px, $contrast-primary);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -58,12 +58,16 @@
       transition: opacity .4s ease;
     }
 
-    @media (min-width: 500px) {
-      grid-column: 1 / 3;
+    @media (min-width: 460px) {
+      grid-column: 1 / -1;
     }
 
     @media (min-width: 737px) {
       grid-column: 2 / 4;
     }
+  }
+
+  @include mobileLg {
+    padding: 2rem 4rem;
   }
 }

@@ -58,3 +58,12 @@ h2 {
   font-size: 3rem;
   font-weight: 400;
 }
+
+p,
+a {
+  font-size: 1.4rem;
+
+  @include desktop {
+    font-size: 1.6rem;
+  }
+}

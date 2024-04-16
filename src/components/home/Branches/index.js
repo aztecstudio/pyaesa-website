@@ -7,11 +7,14 @@ export const Branches = () => {
 		<section className={styles.Branches}>
 			<h2>Sucursales</h2>
 			<div className={styles.Branches__card}>
-				<p>
-					¡Descubre nuestras sucursales y déjate sorprender por la variedad de
-					pinturas, acabados y accesorios que tenemos para ofrecerte, todo en un
-					mismo lugar!
-				</p>
+				<div className={styles.Branches__description}>
+					<p>
+						¡Descubre nuestras sucursales y déjate sorprender por la variedad de
+						pinturas, acabados y accesorios que tenemos para ofrecerte, todo en
+						un mismo lugar!
+					</p>
+					<Link href='/sucursales'>Ver sucursales</Link>
+				</div>
 				<div className={styles.Branches__img}>
 					<Image
 						src='/images/location.png'
@@ -20,7 +23,6 @@ export const Branches = () => {
 						alt='Cepillo de Alambre corto SW'
 					/>
 				</div>
-				<Link href='/sucursales'>Ver sucursales</Link>
 			</div>
 		</section>
 	);

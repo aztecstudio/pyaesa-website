@@ -1,5 +1,5 @@
 .Contact {
-  padding: 2rem 4rem;
+  padding: 2rem;
 
   &__card {
     @include card();
@@ -13,7 +13,6 @@
   }
 
   &__contactUs {
-    display: flex;
     @include flex(column, null, center);
     padding: 1rem 0;
 
@@ -41,10 +40,6 @@
         margin-top: 0;
       }
     }
-
-    @include desktop {
-      @include flex(row, space-around, center);
-    }
   }
 
   &__form {
@@ -56,4 +51,17 @@
     }
   }
 
+  @include mobileLg {
+    padding: 2rem 4rem;
+  }
+
+  @include desktop {
+    &__contactUs {
+      @include flex(row, space-around, center);
+
+      a {
+        margin-top: 0;
+      }
+    }
+  }
 }
