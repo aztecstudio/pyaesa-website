@@ -16,7 +16,7 @@
     }
 
     a {
-      @include btn(250px);
+      @include btn($bgColor: $contrast-primary);
       position: absolute;
       top: 50%;
       left: 50%;

@@ -25,7 +25,7 @@
   }
 
   &__link {
-    @include btn();
+    @include btn($bgColor: $contrast-primary);
     display: inline-block;
     margin-top: 4rem;
     text-align: center;

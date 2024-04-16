@@ -23,6 +23,7 @@ export const ContactForm = () => {
 				<label>Mensaje</label>
 				<textarea rows='5' />
 			</div>
+			<button className={styles.Form__button}>Enviar</button>
 		</form>
 	);
 };

@@ -20,7 +20,7 @@ export const Contact = () => {
 							<p>contacto@pyaesa.com.mx</p>
 						</div>
 					</section>
-					<Link href='/contacto'>Ir a contacto</Link>
+					<Link href='/contacto'>Ver más</Link>
 				</section>
 				<section className={styles.Contact__form}>
 					<h3>O rellena el formulario:</h3>

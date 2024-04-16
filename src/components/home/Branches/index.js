@@ -20,7 +20,7 @@ export const Branches = () => {
 						alt='Cepillo de Alambre corto SW'
 					/>
 				</div>
-				<Link href='/sucursales'>Ir a sucursales</Link>
+				<Link href='/sucursales'>Ver sucursales</Link>
 			</div>
 		</section>
 	);

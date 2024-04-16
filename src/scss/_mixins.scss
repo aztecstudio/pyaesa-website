@@ -17,13 +17,13 @@
   align-items: $align;
 }
 
-@mixin btn ($maxWidth: 250px) {
+@mixin btn ($maxWidth: 250px, $bgColor) {
   width: 80%;
   max-width: $maxWidth;
   padding: 1.2rem 2rem;
   text-align: center;
   color: $color-primary;
-  background-color: $contrast-primary;
+  background-color: $bgColor;
   font-weight: bold;
   text-transform: uppercase;
   border-radius: .3rem;

@@ -14,7 +14,12 @@
     grid-column: 1 / -1;
     @include flex(column);
     width: 100%;
+    margin-bottom: 1.6rem;
     @include input();
+  }
+
+  &__button {
+    @include btn($bgColor: $contrast-secondary);
   }
 
   @include tablet {
