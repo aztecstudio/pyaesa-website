@@ -18,7 +18,7 @@ export const Overview = () => {
 					pueda conocer con mayor detalle nuestra Compañía, sus Productos y
 					Servicios. Todos los que formamos parte de Sherwin Williams México,
 					estamos absolutamente comprometidos en proporcionar a nuestros
-					clientes productos y servicios de la más alta calidad
+					clientes productos y servicios de la más alta calidad.
 				</p>
 			</div>
 			<Link className={styles.Overview__link} href='/nuestra-empresa'>
