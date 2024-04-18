@@ -8,9 +8,9 @@ export const Overview = () => {
 			<div className={styles.Overview__description}>
 				<Image
 					src={`/images/home-img.jpg`}
-					alt={`Slide-1 image`}
-					width={400}
-					height={226}
+					alt={`Home`}
+					width={990}
+					height={560}
 					priority
 				/>
 				<p>

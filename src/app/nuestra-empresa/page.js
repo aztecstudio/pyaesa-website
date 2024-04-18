@@ -1,5 +1,13 @@
+import { Description, Environment, Grid } from '@/components';
+
 const AboutUs = () => {
-	return <h1>Nuestra Empresa</h1>;
+	return (
+		<>
+			<Description />
+			<Grid />
+			<Environment />
+		</>
+	);
 };
 
 export default AboutUs;

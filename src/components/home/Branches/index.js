@@ -18,9 +18,9 @@ export const Branches = () => {
 				<div className={styles.Branches__img}>
 					<Image
 						src='/images/location.png'
-						width={320}
-						height={182}
-						alt='Cepillo de Alambre corto SW'
+						width={640}
+						height={364}
+						alt='Simbolo de ubicación'
 					/>
 				</div>
 			</div>

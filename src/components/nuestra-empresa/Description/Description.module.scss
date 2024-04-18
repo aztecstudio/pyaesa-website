@@ -1,0 +1,39 @@
+.Description {
+  height: auto;
+  text-align: center;
+
+  &__title {
+    text-align: left;
+    ;
+  }
+
+  &__container {
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      border-radius: .5rem;
+      box-shadow: 0 0 8px $shadow-3;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      text-align: left;
+    }
+  }
+
+  @include desktop {
+    &__container {
+      p {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+    }
+  }
+}

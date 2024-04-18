@@ -7,3 +7,7 @@ export { Overview } from './home/Overview';
 export { MainProducts } from './home/MainProducts';
 export { Branches } from './home/Branches';
 export { Contact } from './home/Contact';
+
+export { Description } from './nuestra-empresa/Description';
+export { Grid } from './nuestra-empresa/Grid';
+export { Environment } from './nuestra-empresa/Environment';

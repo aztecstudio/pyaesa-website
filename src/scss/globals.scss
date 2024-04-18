@@ -60,7 +60,7 @@ a {
 
 h2 {
   margin-bottom: 2rem;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 400;
 
   @include mobileLg {
@@ -71,8 +71,10 @@ h2 {
 p,
 a {
   font-size: 1.4rem;
+  line-height: 2.0rem;
 
   @include desktop {
     font-size: 1.6rem;
+    line-height: 2.4rem;
   }
 }

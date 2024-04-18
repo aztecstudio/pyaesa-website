@@ -28,12 +28,13 @@
       font-weight: 300;
 
       a {
+        font-size: .8rem;
         color: $color-primary;
       }
     }
   }
 
-  @include tablet {
+  @include mobileLg {
     padding: 2rem 4rem;
 
     &__info {
@@ -41,6 +42,10 @@
       p,
       span {
         font-size: 1.2rem;
+
+        a {
+          font-size: 1.2rem;
+        }
       }
     }
   }
