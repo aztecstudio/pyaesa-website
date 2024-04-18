@@ -31,6 +31,10 @@ main {
   }
 
   @include desktop {
+    margin: 0 3rem;
+  }
+
+  @include desktopLg {
     margin: 0 6rem;
   }
 }
@@ -39,6 +43,10 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid #202020;
+  }
 }
 
 input,
@@ -56,6 +64,11 @@ ul {
 a {
   text-decoration: none;
   color: $text-color;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid #202020;
+  }
 }
 
 h2 {

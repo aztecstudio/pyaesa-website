@@ -61,12 +61,12 @@
       grid-column: 1 / -1;
     }
 
-    @media (min-width: 737px) {
+    @media (min-width: 720px) {
       grid-column: 2 / 4;
       margin-top: 0;
     }
 
-    @media (min-width: 1060px) {
+    @media (min-width: 940px) {
       margin-top: 2rem;
     }
   }

@@ -18,30 +18,31 @@
 
     ul {
       display: none;
-      gap: 1.6rem;
+      gap: 1rem;
 
       li {
         position: relative;
         font-weight: 300;
-        @include linkHover(-2px);
 
         a {
           color: $color-primary;
           font-size: 1.6rem;
+          padding: 2rem;
+          border-radius: 2rem;
+
+          &:hover {
+            background-color: $shadow;
+          }
         }
 
         .linkActive {
-          font-weight: 500;
-          border-bottom: 2px solid $contrast-secondary;
+          font-weight: 700;
+          background-color: $shadow;
         }
       }
 
-      @include tablet {
-        @include flex(row);
-      }
-
       @include desktop {
-        gap: 3rem;
+        @include flex(row);
       }
     }
 
@@ -58,30 +59,30 @@
         border-radius: 50%;
         background-color: $shadow;
       }
-
-      @include tablet {
-        display: none;
-      }
-    }
-
-    @include tablet {
-      justify-content: space-around;
     }
   }
 
   @include tablet {
-    height: 100px;
     padding: 1rem 5rem;
+  }
+
+  @include desktop {
+    height: 100px;
     background-color: transparent;
     box-shadow: none;
 
     &__navbar {
+      justify-content: space-around;
       background-color: $color-secondary;
       box-shadow: 0 0 8px $shadow-3;
+
+      button {
+        display: none;
+      }
     }
   }
 
-  @include desktop {
-    padding: 1rem 8rem;
+  @include desktopLg {
+    padding: 1rem 10rem;
   }
 }
