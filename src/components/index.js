@@ -8,6 +8,6 @@ export { MainProducts } from './home/MainProducts';
 export { Branches } from './home/Branches';
 export { Contact } from './home/Contact';
 
-export { Description } from './nuestra-empresa/Description';
-export { Grid } from './nuestra-empresa/Grid';
+export { AboutUs } from './nuestra-empresa/AboutUs';
+export { AboutUsGrid } from './nuestra-empresa/AboutUsGrid';
 export { Environment } from './nuestra-empresa/Environment';

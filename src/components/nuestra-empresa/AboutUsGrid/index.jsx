@@ -1,12 +1,12 @@
 import Image from 'next/image';
-import styles from './Grid.module.scss';
+import styles from './AboutUsGrid.module.scss';
 
-export const Grid = () => {
+export const AboutUsGrid = () => {
 	return (
 		<section>
-			<div className={styles.Grid}>
-				<div className={styles.Grid__item}>
-					<div className={styles.Grid__item__img}>
+			<div className={styles.AboutUsGrid}>
+				<div className={styles.AboutUsGrid__item}>
+					<div className={styles.AboutUsGrid__item__img}>
 						<p>Compromiso</p>
 						<Image
 							src={`/images/shw-compromiso.png`}
@@ -17,8 +17,8 @@ export const Grid = () => {
 						/>
 					</div>
 				</div>
-				<div className={styles.Grid__item}>
-					<p className={styles.Grid__item__text}>
+				<div className={styles.AboutUsGrid__item}>
+					<p className={styles.AboutUsGrid__item__text}>
 						Sherwin-Williams tiene el compromiso de liderar también el
 						posicionamiento en la mente de nuestros clientes. La Compañía
 						siempre ha pensado que la satisfacción del cliente es la esencia de
@@ -27,8 +27,8 @@ export const Grid = () => {
 						que hay que realizar constantemente.
 					</p>
 				</div>
-				<div className={styles.Grid__item}>
-					<div className={styles.Grid__item__img}>
+				<div className={styles.AboutUsGrid__item}>
+					<div className={styles.AboutUsGrid__item__img}>
 						<p>Misión</p>
 						<Image
 							src={`/images/shw-mision.jpg`}
@@ -39,8 +39,8 @@ export const Grid = () => {
 						/>
 					</div>
 				</div>
-				<div className={styles.Grid__item}>
-					<p className={styles.Grid__item__text}>
+				<div className={styles.AboutUsGrid__item}>
+					<p className={styles.AboutUsGrid__item__text}>
 						Comercializar recubrimientos y servicios de calidad que sobrepasen
 						las espectativas de los clientes, en cuanto a proteccion y
 						decoracion de instalaciones arquitectonicas e industriales. Ser una

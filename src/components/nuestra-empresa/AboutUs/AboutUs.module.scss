@@ -1,4 +1,4 @@
-.Description {
+.AboutUs {
   height: auto;
   text-align: center;
 
@@ -7,7 +7,7 @@
     ;
   }
 
-  &__container {
+  &__description {
     width: 100%;
     text-align: center;
 
@@ -29,7 +29,7 @@
   }
 
   @include desktop {
-    &__container {
+    &__description {
       p {
         font-size: 1.6rem;
         line-height: 2.2rem;

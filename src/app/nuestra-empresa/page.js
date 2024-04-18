@@ -1,13 +1,13 @@
-import { Description, Environment, Grid } from '@/components';
+import { AboutUs, AboutUsGrid, Environment } from '@/components';
 
-const AboutUs = () => {
+const AboutUsPage = () => {
 	return (
 		<>
-			<Description />
-			<Grid />
+			<AboutUs />
+			<AboutUsGrid />
 			<Environment />
 		</>
 	);
 };
 
-export default AboutUs;
+export default AboutUsPage;

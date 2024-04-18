@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import styles from './Description.module.scss';
+import styles from './AboutUs.module.scss';
 
-export const Description = () => {
+export const AboutUs = () => {
 	return (
-		<section className={styles.Description}>
-			<h2 className={styles.Description__title}>Acerca de nosotros</h2>
-			<div className={styles.Description__container}>
+		<section className={styles.AboutUs}>
+			<h2 className={styles.AboutUs__title}>Acerca de nosotros</h2>
+			<div className={styles.AboutUs__description}>
 				<Image
 					src={`/images/about-us.jpg`}
 					alt={`Acerca de nosotros`}
