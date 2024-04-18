@@ -5,13 +5,13 @@
 }
 
 @mixin tablet {
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: 900px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }

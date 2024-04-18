@@ -20,7 +20,7 @@
 
       li {
         position: relative;
-        font-weight: bold;
+        font-weight: 300;
         margin-bottom: 3rem;
         @include linkHover();
 
@@ -33,6 +33,7 @@
 
         .linkActive {
           border-bottom: 2px solid $contrast-secondary;
+          font-weight: 500;
         }
       }
     }

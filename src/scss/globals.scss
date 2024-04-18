@@ -30,10 +30,6 @@ main {
     }
   }
 
-  @include tablet {
-    margin: 0 2rem;
-  }
-
   @include desktop {
     margin: 0 6rem;
   }
