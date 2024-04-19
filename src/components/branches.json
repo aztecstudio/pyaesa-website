@@ -1,0 +1,73 @@
+[
+  {
+    "id": "centro",
+    "title": "Sucursal Centro",
+    "address": "Xicoténcatl No.832 Esquina Alvarez, Zona Centro",
+    "phones": [
+      "844-4127754",
+      "844-1350858"
+    ],
+    "email": "centro@pyaesa.com.mx",
+    "city": "Saltillo, Coahuila - CP: 25000"
+  },
+  {
+    "id": "ramos-arizpe",
+    "title": "Sucursal Ramos Arizpe",
+    "address": "Blvd. Plan de Guadalupe No. 302-B Entre De la Fuente y Carranza",
+    "phones": [
+      "844-4884914"
+    ],
+    "email": "ramos@pyaesa.com.mx",
+    "city": "Saltillo, Coahuila - CP: 25900"
+  },
+  {
+    "id": "sur",
+    "title": "Sucursal Sur",
+    "address": "Blvd. Antonio Cardenas No. 1612 Frente al museo del chapulín",
+    "phones": [
+      "844-1113967"
+    ],
+    "email": "sur@pyaesa.com.mx",
+    "city": "Saltillo, Coahuila C.P.25047"
+  },
+  {
+    "id": "obelisco",
+    "title": "Sucursal Obelisco",
+    "address": "Plaza obelisco Local 20 Frente a Hospital del niño",
+    "phones": [
+      "844-4163676"
+    ],
+    "email": "obelisco@pyaesa.com.mx",
+    "city": "Saltillo, Coahuila C.P.25253"
+  },
+  {
+    "id": "valdes-sanchez",
+    "title": "Sucursal Valdés Sánchez",
+    "address": "Blvd. Jesús Valdés Sánchez casi esquina con P. Luis Echeverría No. 2311-6 Fracc. Europa",
+    "phones": [
+      "844-4156700"
+    ],
+    "email": "valdezsanchez@pyaesa.com.mx",
+    "city": "Saltillo, Coahuila"
+  },
+  {
+    "id": "otilio",
+    "title": "Sucursal Otilio",
+    "address": "Prol. Otilio González No. 2720-1 col. Herradura Tercer Sector (Enseguida de Bodega Aurrerá)",
+    "phones": [
+      "844-4204000"
+    ],
+    "email": "otilio@pyaesa.com.mx",
+    "city": "Saltillo, Coahuila"
+  },
+  {
+    "id": "ramos-2",
+    "title": "Sucursal Ramos 2",
+    "address": "Blvd. Plan de Guadalupe No. 625 esquina Gómez Farías",
+    "phones": [
+      "488-15-15"
+    ],
+    "email": "ramos2@pyaesa.com.mx",
+    "city": "Ramos Arizpe, Coahuila"
+  }
+]

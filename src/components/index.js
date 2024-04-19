@@ -11,3 +11,7 @@ export { Contact } from './home/Contact';
 export { AboutUs } from './nuestra-empresa/AboutUs';
 export { AboutUsGrid } from './nuestra-empresa/AboutUsGrid';
 export { Environment } from './nuestra-empresa/Environment';
+
+export { ToggleView } from './sucursales/ToggleView';
+export { BranchesGrid } from './sucursales/BranchesGrid';
+export { BranchesMap } from './sucursales/BranchesMap';
