@@ -1,0 +1,54 @@
+.ContactUs {
+  h3 {
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  &__info {
+    padding-bottom: 2rem;
+
+    &__text {
+      @include flex(column);
+      gap: .8rem;
+
+      .phone,
+      .email,
+      .location {
+        @include flex($align: center);
+        position: relative;
+        width: 90%;
+        margin: auto;
+        margin-bottom: .8rem;
+        padding-left: 3rem;
+        font-size: 1.4rem;
+
+        svg {
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+
+    &__logo {
+      width: 350px;
+      height: 350px;
+      display: none;
+    }
+
+    @include desktop {
+      @include flex(row, center, center);
+
+      &__text {
+        gap: 3rem;
+      }
+
+      &__logo {
+        display: block;
+      }
+    }
+  }
+
+  &__form {
+    @include flex($justify: center)
+  }
+}

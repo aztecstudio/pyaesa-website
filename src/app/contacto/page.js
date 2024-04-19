@@ -1,5 +1,12 @@
-const Contact = () => {
-	return <h1>Contact</h1>;
+import { ContactUs } from '@/components';
+
+const ContactPage = () => {
+	return (
+		<section>
+			<h2>Contáctanos</h2>
+			<ContactUs />
+		</section>
+	);
 };
 
-export default Contact;
+export default ContactPage;

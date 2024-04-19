@@ -73,11 +73,20 @@ a {
 
 h2 {
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 400;
 
   @include mobileLg {
     font-size: 3rem;
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  @include mobileLg {
+    font-size: 2.2rem;
   }
 }
 
