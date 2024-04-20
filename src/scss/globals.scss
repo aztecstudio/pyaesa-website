@@ -23,10 +23,10 @@ main {
   box-shadow: 10px 0 15px -5px $shadow, -10px 0 15px -5px $shadow;
 
   &>section:not(:first-child) {
-    padding: 2rem;
+    padding: 3rem 2rem;
 
     @include mobileLg {
-      padding: 2rem 4rem;
+      padding: 3rem 4rem;
     }
   }
 
@@ -72,9 +72,13 @@ a {
 }
 
 h2 {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 300;
+
+  span {
+    font-weight: 600;
+  }
 
   @include mobileLg {
     font-size: 4rem;
@@ -84,6 +88,11 @@ h2 {
 h3 {
   font-size: 1.8rem;
   font-weight: 400;
+  margin-bottom: 2rem;
+
+  span {
+    font-weight: 700;
+  }
 
   @include mobileLg {
     font-size: 2.2rem;

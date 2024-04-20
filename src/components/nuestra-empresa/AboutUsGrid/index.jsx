@@ -9,7 +9,7 @@ export const AboutUsGrid = () => {
 					<div className={styles.AboutUsGrid__item__img}>
 						<p>Compromiso</p>
 						<Image
-							src={`/images/shw-compromiso.png`}
+							src={`/images/shw-compromiso.jpg`}
 							alt={`Compromiso`}
 							width={990}
 							height={560}

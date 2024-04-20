@@ -4,7 +4,9 @@ import styles from './AboutUs.module.scss';
 export const AboutUs = () => {
 	return (
 		<section className={styles.AboutUs}>
-			<h2 className={styles.AboutUs__title}>Acerca de nosotros</h2>
+			<h2 className={styles.AboutUs__title}>
+				Acerca <span>de nosotros</span>
+			</h2>
 			<div className={styles.AboutUs__description}>
 				<Image
 					src={`/images/about-us.jpg`}

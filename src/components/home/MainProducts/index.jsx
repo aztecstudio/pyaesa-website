@@ -5,7 +5,9 @@ import Link from 'next/link';
 export const MainProducts = () => {
 	return (
 		<section className={styles.MainProducts}>
-			<h2>Productos recomendados</h2>
+			<h2>
+				Productos <span>recomendados</span>
+			</h2>
 			<div className={styles.MainProducts__gridContainer}>
 				<div className={styles.MainProducts__gridItem}>
 					<p>Válvula EZTouch</p>

@@ -5,7 +5,9 @@ import Link from 'next/link';
 export const Branches = () => {
 	return (
 		<section className={styles.Branches}>
-			<h2>Sucursales</h2>
+			<h2>
+				Nuestras <span>sucursales</span>
+			</h2>
 			<div className={styles.Branches__card}>
 				<div className={styles.Branches__description}>
 					<p>

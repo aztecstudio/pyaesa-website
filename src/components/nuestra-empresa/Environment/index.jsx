@@ -4,7 +4,9 @@ import styles from './Environment.module.scss';
 export const Environment = () => {
 	return (
 		<section className={styles.Environment}>
-			<h2 className={styles.Environment__title}>Medio ambiente y comunidad</h2>
+			<h3 className={styles.Environment__title}>
+				Medio <span>ambiente y comunidad</span>
+			</h3>
 			<div className={styles.Environment__container}>
 				<Image
 					src={`/images/medio-ambiente.jpg`}

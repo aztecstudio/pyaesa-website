@@ -33,7 +33,7 @@ export const ContactUs = () => {
 				</div>
 			</section>
 			<h3>
-				Te invitamos a que ingreses los datos solicitados para contactarte:
+				Ingresa <span>los datos solicitados y nosotros te contactaremos:</span>:
 			</h3>
 			<section className={styles.ContactUs__form}>
 				<ContactForm />

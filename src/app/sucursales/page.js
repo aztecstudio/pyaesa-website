@@ -7,7 +7,9 @@ const BranchesPage = () => {
 
 	return (
 		<section>
-			<h2>Encuentra la sucursal más cercana</h2>
+			<h2>
+				Encuentra <span>la sucursal más cercana</span>
+			</h2>
 			<ToggleView setIsGrid={setIsGrid} />
 			{isGrid ? <BranchesGrid /> : <BranchesMap />}
 		</section>

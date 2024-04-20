@@ -1,9 +1,9 @@
 .Header {
   position: fixed;
   top: 0;
-  height: 70px;
+  height: 80px;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   color: $color-primary;
   background-color: $color-secondary;
   box-shadow: 0 4px 8px $shadow-3;
@@ -17,7 +17,13 @@
     border-radius: .8rem;
 
     &__logo {
-      height: 60px;
+      @include flex($align: center);
+      height: 100%;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
     }
 
     ul {
@@ -26,7 +32,7 @@
 
       li {
         position: relative;
-        font-weight: 300;
+        font-weight: 400;
 
         a {
           color: $color-primary;
@@ -43,10 +49,6 @@
           font-weight: 700;
           background-color: $shadow;
         }
-      }
-
-      @include desktop {
-        @include flex(row);
       }
     }
 
@@ -79,6 +81,18 @@
       justify-content: space-around;
       background-color: $color-secondary;
       box-shadow: 0 0 8px $shadow-3;
+
+      &__logo {
+        img {
+          height: 80%;
+        }
+      }
+
+      ul {
+        @include desktop {
+          @include flex(row);
+        }
+      }
 
       button {
         display: none;

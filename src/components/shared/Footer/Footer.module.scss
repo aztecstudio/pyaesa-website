@@ -4,11 +4,16 @@
   color: $color-primary;
   box-shadow: 0 -4px 8px $shadow-3;
 
-  &__text {
+  &__logo {
+    height: 150px;
     text-align: center;
-    font-size: 1.4rem;
-    font-weight: 300;
     padding: 2rem 0;
+
+    img {
+      width: 90%;
+      max-width: 320px;
+      height: auto;
+    }
   }
 
   &__divider {
