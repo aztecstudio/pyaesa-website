@@ -13,19 +13,19 @@ export const BranchesGrid = () => {
 							</div>
 							<div className={styles.BranchesGrid__item__info}>
 								<div className={styles.location}>
-									<MapPin size={16} />
+									<MapPin size={18} />
 									<span>{branch.address}</span>
 								</div>
 								<div className={styles.phone}>
-									<Phone size={16} />
+									<Phone size={18} />
 									{branch.phones.join(' | ')}
 								</div>
 								<div className={styles.email}>
-									<Mail size={16} />
+									<Mail size={18} />
 									{branch.email}
 								</div>
 								<div className={styles.city}>
-									<Map size={16} />
+									<Map size={18} />
 									{branch.city}
 								</div>
 							</div>

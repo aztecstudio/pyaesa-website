@@ -31,15 +31,15 @@ export const Menu = () => {
 			<div className={styles.Menu__divider}></div>
 			<section className={styles.Menu__footer}>
 				<div>
-					<Phone size={20} />
-					<span>(844)420-9500</span>
+					<Phone size={18} />
+					<span>(844) 420-9500</span>
 				</div>
 				<div>
-					<Mail size={20} />
+					<Mail size={18} />
 					<span>contacto@pyaesa.com.mx</span>
 				</div>
 				<div>
-					<MapPin size={20} />
+					<MapPin size={18} />
 					<span>
 						Abasolo # 972 (Entre Corona y P. Agüero) Saltillo, Coahuila 25900,
 						México

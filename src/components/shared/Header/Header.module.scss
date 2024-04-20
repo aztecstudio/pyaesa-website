@@ -16,6 +16,10 @@
     align-items: center;
     border-radius: .8rem;
 
+    &__logo {
+      height: 60px;
+    }
+
     ul {
       display: none;
       gap: 1rem;

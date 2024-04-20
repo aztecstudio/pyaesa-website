@@ -18,7 +18,7 @@ export const Header = () => {
 	return (
 		<header className={styles.Header}>
 			<nav className={styles.Header__navbar}>
-				<h1>PYAESA</h1>
+				<div className={styles.Header__navbar__logo}></div>
 				<ul>
 					{PAGES.map((item, i) => (
 						<li key={`${item.label}-${i}`}>

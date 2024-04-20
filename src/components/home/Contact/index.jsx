@@ -12,11 +12,11 @@ export const Contact = () => {
 				<section className={styles.Contact__contactUs}>
 					<section>
 						<div>
-							<Phone size={20} />
-							<span>(844)420-9500</span>
+							<Phone size={18} />
+							<span>(844) 420-9500</span>
 						</div>
 						<div>
-							<Mail size={20} />
+							<Mail size={18} />
 							<span>contacto@pyaesa.com.mx</span>
 						</div>
 					</section>

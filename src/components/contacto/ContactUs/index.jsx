@@ -1,19 +1,15 @@
 import { Mail, MapPin, Phone } from 'react-feather';
 import styles from './ContactUs.module.scss';
 import { ContactForm } from '@/components';
-import ContactLogo from '../ContactLogo';
+import ContactImage from '../ContactImage';
 
 export const ContactUs = () => {
 	return (
 		<div className={styles.ContactUs}>
-			<h3>Atención al cliente:</h3>
 			<section className={styles.ContactUs__info}>
-				<div className={styles.ContactUs__info__logo}>
-					<ContactLogo />
-				</div>
 				<div className={styles.ContactUs__info__text}>
 					<div className={styles.phone}>
-						<Phone size={20} />
+						<Phone size={18} />
 						<div>
 							<span>(844) 420-9500</span>
 							<span>(844) 412-0412</span>
@@ -21,16 +17,19 @@ export const ContactUs = () => {
 						</div>
 					</div>
 					<div className={styles.email}>
-						<Mail size={20} />
+						<Mail size={18} />
 						<span>contacto@pyaesa.com.mx</span>
 					</div>
 					<div className={styles.location}>
-						<MapPin size={16} />
+						<MapPin size={18} />
 						<span>
 							Abasolo # 972 (Entre Corona y P. Agüero) Saltillo, Coahuila 25900,
 							México
 						</span>
 					</div>
+				</div>
+				<div className={styles.ContactUs__info__img}>
+					<ContactImage />
 				</div>
 			</section>
 			<h3>

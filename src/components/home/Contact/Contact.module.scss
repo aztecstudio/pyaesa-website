@@ -18,7 +18,7 @@
       @include flex(column);
 
       div {
-        @include prependIconText();
+        @include prependIconText($contrast-secondary);
       }
     }
 

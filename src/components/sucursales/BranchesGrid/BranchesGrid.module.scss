@@ -31,7 +31,7 @@
       @include flex(column, $justify: center);
 
       div {
-        @include prependIconText();
+        @include prependIconText($contrast-primary);
       }
     }
   }

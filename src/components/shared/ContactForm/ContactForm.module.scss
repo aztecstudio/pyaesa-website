@@ -21,7 +21,9 @@
   }
 
   &__button {
+    grid-column: 1 / -1;
     @include btn($bgColor: $contrast-secondary);
+    margin: auto;
   }
 
   @include tablet {

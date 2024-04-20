@@ -4,7 +4,7 @@
   }
 
   &__info {
-    padding: 3rem 0;
+    padding-bottom: 3rem;
 
     &__text {
       @include flex(column);
@@ -12,7 +12,7 @@
 
       .phone {
         @include flex($align: center);
-        @include prependIconText();
+        @include prependIconText($contrast-primary);
 
         div {
           @include flex(column);
@@ -22,24 +22,24 @@
 
       .email,
       .location {
-        @include prependIconText();
+        @include prependIconText($contrast-primary);
       }
     }
 
-    &__logo {
+    &__img {
       width: 350px;
       height: 350px;
       display: none;
     }
 
-    @include desktop {
+    @include tablet {
       @include flex(row, center, center);
 
       &__text {
         gap: 3rem;
       }
 
-      &__logo {
+      &__img {
         display: block;
       }
     }
