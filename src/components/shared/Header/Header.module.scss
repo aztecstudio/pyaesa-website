@@ -11,9 +11,7 @@
 
   &__navbar {
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(row, space-between, center);
     border-radius: .8rem;
 
     &__logo {
@@ -78,7 +76,7 @@
     box-shadow: none;
 
     &__navbar {
-      justify-content: space-around;
+      justify-content: space-evenly;
       background-color: $color-secondary;
       box-shadow: 0 0 8px $shadow-3;
 
@@ -89,9 +87,7 @@
       }
 
       ul {
-        @include desktop {
-          @include flex(row);
-        }
+        @include flex(row);
       }
 
       button {
@@ -101,6 +97,10 @@
   }
 
   @include desktopLg {
-    padding: 1rem 10rem;
+    padding: 1rem 12rem;
+
+    &__navbar {
+      justify-content: space-around;
+    }
   }
 }
