@@ -13,11 +13,11 @@ export const Contact = () => {
 					<section>
 						<div>
 							<Phone size={20} />
-							<p>(844)420-9500</p>
+							<span>(844)420-9500</span>
 						</div>
 						<div>
 							<Mail size={20} />
-							<p>contacto@pyaesa.com.mx</p>
+							<span>contacto@pyaesa.com.mx</span>
 						</div>
 					</section>
 					<Link href='/contacto'>Ver más</Link>

@@ -32,19 +32,18 @@ export const Menu = () => {
 			<section className={styles.Menu__footer}>
 				<div>
 					<Phone size={20} />
-					<p>(844)420-9500</p>
+					<span>(844)420-9500</span>
 				</div>
 				<div>
 					<Mail size={20} />
-					<p>contacto@pyaesa.com.mx</p>
+					<span>contacto@pyaesa.com.mx</span>
 				</div>
 				<div>
 					<MapPin size={20} />
-					<p>
-						Abasolo # 972 (Entre Corona y P. Agüero) <br /> Saltillo, Coahuila{' '}
-						<br />
-						25900, México
-					</p>
+					<span>
+						Abasolo # 972 (Entre Corona y P. Agüero) Saltillo, Coahuila 25900,
+						México
+					</span>
 				</div>
 			</section>
 		</div>

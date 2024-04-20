@@ -18,13 +18,7 @@
       @include flex(column);
 
       div {
-        @include flex(row, inherit, center);
-        margin: 1rem 0;
-
-        p {
-          margin-left: .5rem;
-          font-weight: 400;
-        }
+        @include prependIconText();
       }
     }
 

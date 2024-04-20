@@ -1,31 +1,28 @@
 .ContactUs {
   h3 {
     font-weight: 400;
-    margin-bottom: 1.5rem;
   }
 
   &__info {
-    padding-bottom: 2rem;
+    padding: 3rem 0;
 
     &__text {
       @include flex(column);
       gap: .8rem;
 
-      .phone,
+      .phone {
+        @include flex($align: center);
+        @include prependIconText();
+
+        div {
+          @include flex(column);
+          gap: .5rem;
+        }
+      }
+
       .email,
       .location {
-        @include flex($align: center);
-        position: relative;
-        width: 90%;
-        margin: auto;
-        margin-bottom: .8rem;
-        padding-left: 3rem;
-        font-size: 1.4rem;
-
-        svg {
-          position: absolute;
-          left: 0;
-        }
+        @include prependIconText();
       }
     }
 
@@ -49,6 +46,7 @@
   }
 
   &__form {
-    @include flex($justify: center)
+    @include flex($justify: center);
+    padding: 3rem 0;
   }
 }

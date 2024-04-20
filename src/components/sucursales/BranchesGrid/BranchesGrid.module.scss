@@ -28,21 +28,10 @@
     }
 
     &__info {
-      @include flex(column);
+      @include flex(column, $justify: center);
 
       div {
-        @include flex($align: center);
-        position: relative;
-        width: 90%;
-        margin: auto;
-        margin-bottom: .8rem;
-        padding-left: 3rem;
-        font-size: 1.4rem;
-
-        svg {
-          position: absolute;
-          left: 0;
-        }
+        @include prependIconText();
       }
     }
   }

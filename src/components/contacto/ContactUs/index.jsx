@@ -14,7 +14,11 @@ export const ContactUs = () => {
 				<div className={styles.ContactUs__info__text}>
 					<div className={styles.phone}>
 						<Phone size={20} />
-						<span>(844)420-9500</span>
+						<div>
+							<span>(844) 420-9500</span>
+							<span>(844) 412-0412</span>
+							<span>(844) 410-3390</span>
+						</div>
 					</div>
 					<div className={styles.email}>
 						<Mail size={20} />
