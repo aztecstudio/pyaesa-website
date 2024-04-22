@@ -1,0 +1,54 @@
+  .BranchesCard {
+    @include card();
+    @include flex(column, center, center);
+    gap: 2rem;
+    padding: 3rem;
+
+    &__description {
+      p {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        text-align: left;
+        padding: 1rem 1rem 0;
+        margin-bottom: 2rem;
+      }
+
+      a {
+        @include btn($bgColor: $contrast-primary);
+        display: block;
+        margin: auto;
+      }
+    }
+
+    &__img {
+      padding: 2rem;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: auto;
+        object-fit: cover;
+      }
+    }
+
+    @include desktop {
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+
+      &__description {
+        width: 50%;
+
+        p {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          padding: 0;
+        }
+      }
+
+      &__img {
+        width: 50%;
+      }
+    }
+  }

@@ -1,16 +1,14 @@
-.Contact {
-  &__card {
-    @include card();
-    position: relative;
-    padding: 3rem;
+.ContactCard {
+  @include card();
+  position: relative;
+  padding: 3rem;
 
-    h3 {
-      margin-bottom: 2rem;
-      font-weight: 500;
-    }
+  h3 {
+    margin-bottom: 2rem;
+    font-weight: 500;
   }
 
-  &__contactUs {
+  &__info {
     @include flex(column, null, center);
     padding: 1rem 0;
 
@@ -45,7 +43,7 @@
   }
 
   @include desktop {
-    &__contactUs {
+    &__info {
       @include flex(row, space-around, center);
 
       a {

@@ -1,17 +1,19 @@
-'use client';
-import { BranchesGrid, BranchesMap, ToggleView } from '@/components';
-import { useState } from 'react';
+import { Branches } from '@/components';
+import { db } from '@/firebase';
+import { fetchData } from '@/services';
+import { collection } from 'firebase/firestore';
 
-const BranchesPage = () => {
-	const [isGrid, setIsGrid] = useState(true);
+const branchesCollectionRef = collection(db, 'branches');
+
+const BranchesPage = async () => {
+	const branches = await fetchData(branchesCollectionRef);
 
 	return (
 		<section>
 			<h2>
 				Encuentra <span>la sucursal más cercana</span>
 			</h2>
-			<ToggleView setIsGrid={setIsGrid} />
-			{isGrid ? <BranchesGrid /> : <BranchesMap />}
+			<Branches branches={branches} />
 		</section>
 	);
 };

@@ -5,15 +5,15 @@ export { ContactForm } from './shared/ContactForm';
 
 export { Overview } from './home/Overview';
 export { MainProducts } from './home/MainProducts';
-export { Branches } from './home/Branches';
-export { Contact } from './home/Contact';
+export { BranchesCard } from './home/BranchesCard';
+export { ContactCard } from './home/ContactCard';
 
 export { AboutUs } from './nuestra-empresa/AboutUs';
 export { AboutUsGrid } from './nuestra-empresa/AboutUsGrid';
 export { Environment } from './nuestra-empresa/Environment';
 
 export { ToggleView } from './sucursales/ToggleView';
-export { BranchesGrid } from './sucursales/BranchesGrid';
+export { Branches } from './sucursales/Branches';
 export { BranchesMap } from './sucursales/BranchesMap';
 
 export { ContactUs } from './contacto/ContactUs';

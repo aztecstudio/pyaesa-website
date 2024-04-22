@@ -1,15 +1,15 @@
-import { Mail, Phone } from 'react-feather';
-import styles from './Contact.module.scss';
 import Link from 'next/link';
+import { Mail, Phone } from 'react-feather';
 import { ContactForm } from '@/components/shared/ContactForm';
+import styles from './ContactCard.module.scss';
 
-export const Contact = () => {
+export const ContactCard = () => {
 	return (
-		<section className={styles.Contact}>
+		<section>
 			<h2>Contacto</h2>
-			<div className={styles.Contact__card}>
+			<div className={styles.ContactCard}>
 				<h3>Contactanos a través de:</h3>
-				<section className={styles.Contact__contactUs}>
+				<section className={styles.ContactCard__info}>
 					<section>
 						<div>
 							<Phone size={18} />
@@ -22,7 +22,7 @@ export const Contact = () => {
 					</section>
 					<Link href='/contacto'>Ver más</Link>
 				</section>
-				<section className={styles.Contact__form}>
+				<section className={styles.ContactCard__form}>
 					<h3>O rellena el formulario:</h3>
 					<ContactForm />
 				</section>

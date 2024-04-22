@@ -1,15 +1,15 @@
 import Image from 'next/image';
-import styles from './Branches.module.scss';
+import styles from './BranchesCard.module.scss';
 import Link from 'next/link';
 
-export const Branches = () => {
+export const BranchesCard = () => {
 	return (
-		<section className={styles.Branches}>
+		<section>
 			<h2>
 				Nuestras <span>sucursales</span>
 			</h2>
-			<div className={styles.Branches__card}>
-				<div className={styles.Branches__description}>
+			<div className={styles.BranchesCard}>
+				<div className={styles.BranchesCard__description}>
 					<p>
 						¡Descubre nuestras sucursales y déjate sorprender por la variedad de
 						pinturas, acabados y accesorios que tenemos para ofrecerte, todo en
@@ -17,7 +17,7 @@ export const Branches = () => {
 					</p>
 					<Link href='/sucursales'>Ver sucursales</Link>
 				</div>
-				<div className={styles.Branches__img}>
+				<div className={styles.BranchesCard__img}>
 					<Image
 						src='/images/location.png'
 						width={640}
