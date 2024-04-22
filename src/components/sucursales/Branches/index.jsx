@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { Mail, Map, MapPin, Phone } from 'react-feather';
-import { BranchesMap } from '../BranchesMap';
 import { ToggleView } from '../ToggleView';
+import { BranchesMap } from '../BranchesMap';
 import styles from './Branches.module.scss';
 
 export const Branches = ({ branches }) => {

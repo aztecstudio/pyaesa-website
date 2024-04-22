@@ -1,14 +1,10 @@
-'use client';
-import { useContext } from 'react';
-import styles from './Menu.module.scss';
-import { Context } from '@/Context';
 import { Mail, MapPin, Phone } from 'react-feather';
 import Link from 'next/link';
-import { PAGES } from '@/components/consts';
 import { usePathname } from 'next/navigation';
+import { PAGES } from '@/components/consts';
+import styles from './Menu.module.scss';
 
-export const Menu = () => {
-	const { isHidden, setIsHidden } = useContext(Context);
+export const Menu = ({ isHidden, setIsHidden }) => {
 	const pathname = usePathname();
 
 	return (

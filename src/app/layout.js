@@ -1,7 +1,6 @@
 import { Montserrat } from 'next/font/google';
 import '@/scss/globals.scss';
-import { Header, Hero, Menu } from '@/components';
-import ContextProvider from '@/Context';
+import { Header, Hero } from '@/components';
 import { Footer } from '@/components/shared/Footer';
 
 const montserrat = Montserrat({
@@ -19,10 +18,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body className={montserrat.className}>
-				<ContextProvider>
-					<Header />
-					<Menu />
-				</ContextProvider>
+				<Header />
 				<main>
 					<Hero />
 					{children}
