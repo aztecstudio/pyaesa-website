@@ -7,6 +7,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const nextConfig = {
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'firebasestorage.googleapis.com',
+				port: '',
+				pathname: '/v0/b/pyaesa-mx-d5265.appspot.com/o/**',
+			},
+		],
+	},
 	sassOptions: {
 		includePaths: [join(__dirname, 'src/scss')],
 		prependData: `@import "main.scss";`,
