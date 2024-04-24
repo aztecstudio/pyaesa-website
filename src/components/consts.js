@@ -24,3 +24,13 @@ export const PAGES = [
 		label: 'Contacto',
 	},
 ];
+
+export const DYNAMIC_IDS = {
+	interiores: 'id-1',
+	exteriores: 'id-2',
+	'mantenimiento-ligero': 'id-3',
+	leed: 'id-4',
+	'linea-hospitalaria': 'id-5',
+	maderas: 'id-6',
+	krylon: 'id-7',
+};
