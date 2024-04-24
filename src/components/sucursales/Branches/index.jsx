@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import { Mail, Map, MapPin, Phone } from 'react-feather';
 import { ToggleView } from '../ToggleView';
-import { BranchesMap } from '../BranchesMap';
 import styles from './Branches.module.scss';
+import { BranchesMap } from '../BranchesMap';
 
 export const Branches = ({ branches }) => {
 	const [isGrid, setIsGrid] = useState(true);
