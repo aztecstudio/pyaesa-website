@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './ProductsList.module.scss';
 import Link from 'next/link';
 
-export const ProductsList = ({ products }) => {
+export const ProductsList = ({ products, currentPath }) => {
 	return (
 		<div className={styles.GridContainer}>
 			{products.length > 0
@@ -19,7 +19,12 @@ export const ProductsList = ({ products }) => {
 									height={138}
 									alt={product.title}
 								/>
-								<Link href='#'>Ver detalles</Link>
+								<Link
+									href={`/productos/${currentPath}/?product=${product.handle}`}
+									as={`/productos/${currentPath}/?product=${product.handle}`}
+								>
+									Ver detalles
+								</Link>
 							</div>
 						);
 					})

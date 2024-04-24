@@ -1,12 +1,14 @@
-import { ProductCategories, ProductsList } from '@/components';
+import { ProductCategories, Products } from '@/components';
 import { getCategories, getProducts } from '@/services';
 
 const ProductsPage = async props => {
 	const { categories } = props?.params;
+	const { searchParams } = props;
 	const productCats = await getCategories();
 	let categoriesToShow = [];
 	let hasChildren = true;
 	let products = [];
+	let product = '';
 
 	if (categories?.length > 0) {
 		const { id: parentId, children } = productCats.find(
@@ -27,6 +29,10 @@ const ProductsPage = async props => {
 		products = await getProducts(categoryId);
 	}
 
+	if (searchParams?.product) {
+		product = products.find(product => product.handle === searchParams.product);
+	}
+
 	return (
 		<section>
 			<h2>
@@ -38,7 +44,11 @@ const ProductsPage = async props => {
 					currentPath={categories?.join('/')}
 				/>
 			) : (
-				<ProductsList products={products} />
+				<Products
+					products={products}
+					currentPath={categories?.join('/')}
+					product={product}
+				/>
 			)}
 		</section>
 	);

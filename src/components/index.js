@@ -17,4 +17,4 @@ export { Branches } from './sucursales/Branches';
 export { ContactUs } from './contacto/ContactUs';
 
 export { ProductCategories } from './productos/ProductCategories';
-export { ProductsList } from './productos/ProductsList';
+export { Products } from './productos/Products';

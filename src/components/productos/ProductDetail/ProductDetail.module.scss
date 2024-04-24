@@ -1,0 +1,90 @@
+.Details {
+  padding: 2rem 0;
+  line-height: 2rem;
+
+  h3 {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  &__image {
+    max-width: 300px;
+    padding: 2rem;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    padding-bottom: 1rem;
+  }
+
+  ul,
+  ol {
+    font-size: 1.2rem;
+  }
+
+  h4:first-of-type {
+    font-size: 1.6rem;
+    padding: .6rem 0;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: .4rem 0;
+  }
+
+  ul {
+    list-style: square inside;
+  }
+
+  ol {
+    list-style: decimal inside;
+  }
+
+  a {
+    display: inline-block;
+    padding-top: .5rem;
+    color: $contrast-secondary;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid $contrast-secondary;
+    }
+  }
+
+  @include mobileLg {
+    &__image {
+      text-align: left;
+    }
+  }
+
+  @include tablet {
+    padding: 2rem 4rem;
+
+    h4:first-of-type {
+      font-size: 1.8rem;
+    }
+
+    h4 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @include desktop {
+    padding: 2rem 8rem;
+
+    ul,
+    ol {
+      font-size: 1.4rem;
+    }
+  }
+}
