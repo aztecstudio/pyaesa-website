@@ -13,14 +13,12 @@ export const ProductsList = ({ products }) => {
 								className={styles.GridContainer__gridItem}
 							>
 								<p>{product.title}</p>
-								<div className={styles.GridContainer__gridItem__img}>
-									<Image
-										src={product.image}
-										width={207}
-										height={138}
-										alt={product.title}
-									/>
-								</div>
+								<Image
+									src={product.image}
+									width={207}
+									height={138}
+									alt={product.title}
+								/>
 								<Link href='#'>Ver detalles</Link>
 							</div>
 						);
