@@ -1,45 +1,11 @@
-.MainProducts {
-  &__gridContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    place-content: center;
-    gap: 2rem;
-  }
+.GridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  place-content: center;
+  gap: 2rem;
 
   &__gridItem {
-    @include card();
-    text-transform: capitalize;
-
-    a {
-      @include btn(180px, $contrast-primary);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity .5s ease;
-    }
-
-    &:hover {
-      img {
-        opacity: 0.4;
-      }
-
-      a {
-        opacity: 1;
-      }
-    }
-  }
-
-  &__img {
-    text-align: center;
-    margin-top: 4rem;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+    @include itemGridCard();
   }
 
   &__goToProducts {
@@ -62,12 +28,21 @@
     }
 
     @media (min-width: 720px) {
+      gap: 4rem;
+    }
+
+    @media (min-width: 1116px) {
       grid-column: 2 / 4;
       margin-top: 0;
     }
 
-    @media (min-width: 940px) {
+
+    @media (min-width: 1520px) {
       margin-top: 2rem;
     }
+  }
+
+  @include tablet {
+    gap: 4rem;
   }
 }

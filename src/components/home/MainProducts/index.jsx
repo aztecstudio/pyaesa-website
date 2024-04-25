@@ -1,64 +1,37 @@
 import Image from 'next/image';
 import styles from './MainProducts.module.scss';
 import Link from 'next/link';
+import { getProducts } from '@/services';
 
-export const MainProducts = () => {
+export const MainProducts = async () => {
+	const products = await getProducts();
+	const mainProducts = products.slice(1, 5);
+
 	return (
-		<section className={styles.MainProducts}>
+		<section>
 			<h2>
 				Productos <span>recomendados</span>
 			</h2>
-			<div className={styles.MainProducts__gridContainer}>
-				<div className={styles.MainProducts__gridItem}>
-					<p>Válvula EZTouch</p>
-					<div className={styles.MainProducts__img}>
-						<Image
-							src='/images/valvula.png'
-							width={207}
-							height={138}
-							alt='Válvula EZTouch'
-						/>
-					</div>
-					<Link href='#'>Ver detalles</Link>
-				</div>
-				<div className={styles.MainProducts__gridItem}>
-					<p>Aerosol Krylon para decorar</p>
-					<div className={styles.MainProducts__img}>
-						<Image
-							src='/images/aerosol.png'
-							width={207}
-							height={138}
-							alt='Aerosol Krylon'
-						/>
-					</div>
-					<Link href='#'>Ver detalles</Link>
-				</div>
-				<div className={styles.MainProducts__gridItem}>
-					<p>Maneral Elite SW</p>
-					<div className={styles.MainProducts__img}>
-						<Image
-							src='/images/maneral-elite.png'
-							width={207}
-							height={138}
-							alt='Maneral Elite SW'
-						/>
-					</div>
-					<Link href='#'>Ver detalles</Link>
-				</div>
-				<div className={styles.MainProducts__gridItem}>
-					<p>Cepillo de Alambre corto SW</p>
-					<div className={styles.MainProducts__img}>
-						<Image
-							src='/images/cepillo-alambre-corto.png'
-							width={207}
-							height={138}
-							alt='Cepillo de Alambre corto SW'
-						/>
-					</div>
-					<Link href='#'>Ver detalles</Link>
-				</div>
-				<div className={styles.MainProducts__goToProducts}>
-					<Link href='/productos'>Todos los productos</Link>
+			<div className={styles.GridContainer}>
+				{mainProducts.length > 0
+					? mainProducts.map(product => (
+							<div
+								key={`main-product-${product.id}`}
+								className={styles.GridContainer__gridItem}
+							>
+								<p>{product.title}</p>
+								<Image
+									src={product.image}
+									width={207}
+									height={138}
+									alt={product.title}
+								/>
+								<Link href={`/producto/${product.handle}`}>Ver detalles</Link>
+							</div>
+						))
+					: null}
+				<div className={styles.GridContainer__goToProducts}>
+					<Link href='/productos'>Ver productos</Link>
 				</div>
 			</div>
 		</section>
