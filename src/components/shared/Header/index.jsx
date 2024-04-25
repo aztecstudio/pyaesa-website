@@ -33,6 +33,7 @@ export const Header = () => {
 						<li key={`${item.label}-${i}`}>
 							<Link
 								href={item.pathname}
+								as={item.pathname}
 								className={pathname === item.pathname ? styles.linkActive : ''}
 							>
 								{item.label}

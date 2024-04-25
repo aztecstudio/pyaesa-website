@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const ProductCategories = ({
 	categories,
-	currentCategory,
+	currentCategory: { name: categoryName, description },
 	currentPath = '',
 }) => {
 	return (
@@ -13,10 +13,14 @@ export const ProductCategories = ({
 			<h2>
 				Descubre <span>productos por categorías</span>
 			</h2>
-			<h3>
-				<span>{currentCategory.name}</span>
-			</h3>
-			<p>{currentCategory.description}</p>
+			{categoryName ? (
+				<h3>
+					<span>{categoryName}</span>
+				</h3>
+			) : null}
+			{description ? (
+				<p className={styles.categoryDescription}>{description}</p>
+			) : null}
 			<div className={styles.Grid}>
 				{categories?.length > 0
 					? categories.map(category => {

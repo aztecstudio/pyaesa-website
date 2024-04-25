@@ -2,16 +2,19 @@ import Image from 'next/image';
 import styles from './ProductsList.module.scss';
 import Link from 'next/link';
 
-export const ProductsList = ({ products, currentCategory }) => {
+export const ProductsList = ({
+	products,
+	currentCategory: { name: categoryName, description },
+}) => {
 	return (
 		<section className={styles.Container}>
 			<h2>
 				<span>Productos</span>
 			</h2>
 			<h3>
-				<span>{currentCategory.name}</span>
+				<span>{categoryName}</span>
 			</h3>
-			<p>{currentCategory.description}</p>
+			<p className={styles.categoryDescription}>{description}</p>
 			<div className={styles.Grid}>
 				{products.length > 0
 					? products.map(product => (

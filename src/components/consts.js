@@ -4,10 +4,6 @@ export const PAGES = [
 		label: 'Inicio',
 	},
 	{
-		pathname: '/nuestra-empresa',
-		label: 'Nuestra empresa',
-	},
-	{
 		pathname: '/productos',
 		label: 'Productos',
 	},
@@ -22,6 +18,10 @@ export const PAGES = [
 	{
 		pathname: '/contacto',
 		label: 'Contacto',
+	},
+	{
+		pathname: '/nuestra-empresa',
+		label: 'Nuestra empresa',
 	},
 ];
 
