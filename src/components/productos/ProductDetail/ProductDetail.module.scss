@@ -7,6 +7,21 @@
     text-transform: capitalize;
   }
 
+  &__category {
+    border: none !important;
+    display: inline-block;
+    padding-bottom: 0;
+    padding: .3rem .8rem;
+    background-color: $contrast-primary;
+    color: $color-primary !important;
+    font-size: 1.2rem;
+    border-radius: .4rem;
+
+    &:hover {
+      border: none !important;
+    }
+  }
+
   &__image {
     max-width: 300px;
     padding: 2rem;
