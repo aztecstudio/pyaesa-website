@@ -1,8 +1,15 @@
+.Container {
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
 .Grid {
   display: grid;
   gap: 3rem;
   place-content: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+  padding: 2rem 0;
 
   @for $i from 1 through 7 {
     #id-#{$i} {

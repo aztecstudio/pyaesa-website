@@ -1,52 +1,18 @@
-.GridContainer {
+.Container {
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.Grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   place-content: center;
   gap: 2rem;
+  padding: 2rem 0;
 
-  &__gridItem {
-    @include flex(column);
-    gap: .4rem;
-    @include card();
-    text-transform: capitalize;
-    width: 100%;
-    height: 100%;
-    max-height: 300px;
-    aspect-ratio: 0.8;
-
-    p {
-      @include flex(column, $justify: center);
-      height: 30%;
-      font-weight: 600;
-    }
-
-    img {
-      display: block;
-      margin: auto;
-      width: 70%;
-      height: 70%;
-      object-fit: cover;
-    }
-
-    a {
-      @include btn(180px, $contrast-primary);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity .5s ease;
-    }
-
-    &:hover {
-      img {
-        opacity: 0.4;
-      }
-
-      a {
-        opacity: 1;
-      }
-    }
+  &__item {
+    @include itemGridCard();
   }
 
   @include tablet {
