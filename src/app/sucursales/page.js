@@ -1,12 +1,8 @@
 import { Branches } from '@/components';
-import { db } from '@/firebase';
-import { fetchData } from '@/services';
-import { collection } from 'firebase/firestore';
-
-const branchesCollectionRef = collection(db, 'branches');
+import { getBranches } from '@/services';
 
 const BranchesPage = async () => {
-	const branches = await fetchData(branchesCollectionRef);
+	const branches = await getBranches();
 
 	return (
 		<section>

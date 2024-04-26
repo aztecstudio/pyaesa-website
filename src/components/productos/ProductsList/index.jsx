@@ -2,10 +2,9 @@ import Image from 'next/image';
 import styles from './ProductsList.module.scss';
 import Link from 'next/link';
 
-export const ProductsList = ({
-	products,
-	currentCategory: { name: categoryName, description },
-}) => {
+export const ProductsList = ({ products, currentCategory }) => {
+	const { name: categoryName, description } = currentCategory ?? {};
+
 	return (
 		<section className={styles.Container}>
 			<h2>

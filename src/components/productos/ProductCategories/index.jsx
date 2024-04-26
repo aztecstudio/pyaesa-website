@@ -5,9 +5,11 @@ import Link from 'next/link';
 
 export const ProductCategories = ({
 	categories,
-	currentCategory: { name: categoryName, description },
+	currentCategory,
 	currentPath = '',
 }) => {
+	const { name: categoryName, description } = currentCategory ?? {};
+
 	return (
 		<section className={styles.Container}>
 			<h2>
