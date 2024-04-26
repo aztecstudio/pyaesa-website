@@ -1,0 +1,35 @@
+.Container {
+  padding: 0 4rem;
+}
+
+.List {
+  @include flex($align: center);
+  gap: .5rem;
+
+  .Link {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $text-color-soft;
+
+    &:hover {
+      color: $contrast-secondary;
+    }
+
+    @include desktop {
+      font-size: 1.4rem;
+    }
+  }
+
+  li+li::before {
+    content: " | ";
+    padding: 0 .5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .active {
+    color: $contrast-secondary;
+  }
+}

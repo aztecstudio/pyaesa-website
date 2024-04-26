@@ -2,12 +2,10 @@ import Image from 'next/image';
 import { HtmlParser } from '@/components';
 import Link from 'next/link';
 import styles from './ProductDetail.module.scss';
-import { getCategoryInfo } from '@/services';
 
-const ProductDetail = async ({
-	product: { title, image, content, product_cat: productCat },
-}) => {
-	const { name, catPathname } = await getCategoryInfo(productCat[0]);
+const ProductDetail = async ({ product, categoryInfo }) => {
+	const { title, image, content } = product ?? {};
+	const { name, catPathname } = categoryInfo ?? {};
 
 	return (
 		<div className={styles.Details}>

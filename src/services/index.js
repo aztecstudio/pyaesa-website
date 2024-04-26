@@ -48,7 +48,7 @@ export const getCategoryInfo = async (categoryId, currentCatPathname = '') => {
 
 		const catPathname = currentCatPathname
 			? `${data.handle}/${currentCatPathname}`
-			: `/${data.handle}`;
+			: `${data.handle}`;
 
 		if (data.parent) {
 			const parentInfo = await getCategoryInfo(data.parent, catPathname);

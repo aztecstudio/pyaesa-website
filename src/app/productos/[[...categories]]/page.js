@@ -1,5 +1,6 @@
 import { ProductCategories } from '@/components';
 import { ProductsList } from '@/components/productos/ProductsList';
+import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 import { filterCategoryData } from '@/helpers';
 import { getProducts } from '@/services';
 
@@ -11,6 +12,7 @@ const ProductsPage = async props => {
 
 	return (
 		<>
+			<Breadcrumbs categories={categories} />
 			{hasChildren ? (
 				<ProductCategories
 					categories={categoriesToShow}
