@@ -1,6 +1,5 @@
 export { Header } from './shared/Header';
 export { Hero } from './shared/Hero';
-export { ContactForm } from './shared/ContactForm';
 export { HtmlParser } from './shared/HtmlParser';
 export { Breadcrumbs } from './shared/Breadcrumbs';
 

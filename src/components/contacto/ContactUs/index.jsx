@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from 'react-feather';
 import styles from './ContactUs.module.scss';
-import { ContactForm } from '@/components';
 import ContactImage from '../ContactImage';
+import { ContactForm } from '../ContactForm';
 
 export const ContactUs = () => {
 	return (

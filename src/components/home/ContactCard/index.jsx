@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Mail, Phone } from 'react-feather';
-import { ContactForm } from '@/components/shared/ContactForm';
 import styles from './ContactCard.module.scss';
 
 export const ContactCard = () => {
@@ -21,10 +20,6 @@ export const ContactCard = () => {
 						</div>
 					</section>
 					<Link href='/contacto'>Ver más</Link>
-				</section>
-				<section className={styles.ContactCard__form}>
-					<h3>O rellena el formulario:</h3>
-					<ContactForm />
 				</section>
 			</div>
 		</section>

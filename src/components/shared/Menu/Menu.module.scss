@@ -32,14 +32,23 @@
           padding: 2rem;
           border-radius: 1rem;
 
-          &:hover {
-            background-color: $shadow;
+          span {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            padding-bottom: .2rem;
+            @include linkUnderline();
           }
         }
 
         .linkActive {
           font-weight: 700;
           background-color: $shadow;
+
+          span {
+            position: relative;
+            @include linkUnderline(1);
+          }
         }
       }
     }
@@ -62,15 +71,26 @@
     }
   }
 
-  @include tablet {
+  @include mobileLg {
     &__containerList {
       ul {
         text-align: center;
 
         li {
           a {
-            max-width: 500px;
+            max-width: 400px;
+
+            span {
+              @include linkUnderline($width: 50%);
+            }
           }
+
+          .linkActive {
+            span {
+              @include linkUnderline(1, 50%);
+            }
+          }
+
         }
       }
     }

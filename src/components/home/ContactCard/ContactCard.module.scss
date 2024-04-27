@@ -31,17 +31,6 @@
     }
   }
 
-  &__form {
-    @include flex(column, $align: center);
-    padding: 1rem 0;
-
-    h3 {
-      margin: 3rem 0;
-      font-weight: 500;
-      align-self: start;
-    }
-  }
-
   @include desktop {
     &__info {
       @include flex(row, space-around, center);

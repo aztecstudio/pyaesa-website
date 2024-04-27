@@ -37,13 +37,11 @@
           font-size: 1.6rem;
           padding: 2rem;
           border-radius: 2rem;
-
-          &:hover {
-            background-color: $shadow;
-          }
+          @include linkUnderline($width: 80%);
         }
 
         .linkActive {
+          @include linkUnderline(1, 80%);
           font-weight: 700;
           background-color: $shadow;
         }

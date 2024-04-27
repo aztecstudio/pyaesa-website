@@ -129,16 +129,16 @@
   }
 }
 
-@mixin linkHover($bottom: 0) {
+@mixin linkUnderline($scale: 0, $width: 100%) {
   &::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: $bottom;
-    width: 100%;
+    left: calc((100% - $width) / 2);
+    bottom: -.2rem;
+    width: $width;
     height: 2px;
     background-color: $contrast-secondary;
-    transform: scaleX(0);
+    transform: scaleX($scale);
     transform-origin: left;
     transition: transform 250ms ease-in-out;
   }

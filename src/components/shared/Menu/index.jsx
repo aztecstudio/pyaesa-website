@@ -15,10 +15,11 @@ export const Menu = ({ isHidden, setIsHidden }) => {
 						<li key={`${item.label}-${i}`}>
 							<Link
 								href={item.pathname}
+								as={item.pathname}
 								onClick={() => setIsHidden(true)}
 								className={pathname === item.pathname ? styles.linkActive : ''}
 							>
-								{item.label}
+								<span>{item.label}</span>
 							</Link>
 						</li>
 					))}
