@@ -44,7 +44,7 @@ export const Branches = ({ branches }) => {
 						: null}
 				</div>
 			) : (
-				<BranchesMap />
+				<BranchesMap branches={branches} />
 			)}
 		</>
 	);
