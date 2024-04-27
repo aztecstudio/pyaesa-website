@@ -3,7 +3,7 @@ import { HtmlParser } from '@/components';
 import Link from 'next/link';
 import styles from './ProductDetail.module.scss';
 
-const ProductDetail = async ({ product, categoryInfo }) => {
+export const ProductDetail = async ({ product, categoryInfo }) => {
 	const { title, image, content } = product ?? {};
 	const { name, catPathname } = categoryInfo ?? {};
 
@@ -12,6 +12,7 @@ const ProductDetail = async ({ product, categoryInfo }) => {
 			<h3>{title}</h3>
 			<Link
 				href={`/productos/${catPathname}`}
+				as={`/productos/${catPathname}`}
 				className={styles.Details__category}
 			>
 				{name}
@@ -23,5 +24,3 @@ const ProductDetail = async ({ product, categoryInfo }) => {
 		</div>
 	);
 };
-
-export default ProductDetail;

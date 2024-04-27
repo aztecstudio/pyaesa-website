@@ -1,5 +1,4 @@
-import ProductDetail from '@/components/productos/ProductDetail';
-import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
+import { Breadcrumbs, ProductDetail } from '@/components';
 import { getCategoryInfo, getProductByHandle } from '@/services';
 
 const ProductPage = async props => {

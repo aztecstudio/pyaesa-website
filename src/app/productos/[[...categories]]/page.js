@@ -1,19 +1,25 @@
-import { ProductCategories } from '@/components';
-import { ProductsList } from '@/components/productos/ProductsList';
-import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
+import { ProductCategories, ProductsList } from '@/components';
+import { ProductsNavbar } from '@/components/shared/ProductsNavbar';
 import { filterCategoryData } from '@/helpers';
-import { getProducts } from '@/services';
+import { getProducts, searchProducts } from '@/services';
 
 const ProductsPage = async props => {
 	const { categories } = props?.params;
+	const { search } = props?.searchParams;
 	const { categoriesToShow, currentCategory, hasChildren } =
 		await filterCategoryData(categories);
-	const products = hasChildren ? [] : await getProducts(currentCategory?.id);
+	let products = [];
+
+	if (!hasChildren) {
+		products = await getProducts(currentCategory?.id);
+	} else if (search) {
+		products = await searchProducts(search);
+	}
 
 	return (
 		<>
-			<Breadcrumbs categories={categories} />
-			{hasChildren ? (
+			<ProductsNavbar categories={categories} products={products} />
+			{hasChildren && !search ? (
 				<ProductCategories
 					categories={categoriesToShow}
 					currentCategory={currentCategory}

@@ -13,7 +13,7 @@ export const ProductCategories = ({
 	return (
 		<section className={styles.Container}>
 			<h2>
-				Descubre <span>productos por categorías</span>
+				Descubre <span>nuestros productos</span>
 			</h2>
 			{categoryName ? (
 				<h3>
@@ -34,6 +34,7 @@ export const ProductCategories = ({
 								<Link
 									key={`cat-${id}`}
 									href={path}
+									as={path}
 									className={styles.Grid__item}
 									id={styles[dynamicId]}
 								>

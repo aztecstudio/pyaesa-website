@@ -2,6 +2,7 @@ export { Header } from './shared/Header';
 export { Hero } from './shared/Hero';
 export { ContactForm } from './shared/ContactForm';
 export { HtmlParser } from './shared/HtmlParser';
+export { Breadcrumbs } from './shared/Breadcrumbs';
 
 export { Overview } from './home/Overview';
 export { MainProducts } from './home/MainProducts';
@@ -17,4 +18,6 @@ export { Branches } from './sucursales/Branches';
 export { ContactUs } from './contacto/ContactUs';
 
 export { ProductCategories } from './productos/ProductCategories';
-export { Products } from './productos/Products';
+export { ProductsList } from './productos/ProductsList';
+
+export { ProductDetail } from './producto/ProductDetail';

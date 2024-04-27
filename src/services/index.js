@@ -77,11 +77,11 @@ export const getProducts = async (categoryId = undefined) => {
 			q = query(productsCollectionRef);
 		}
 		const querySnapshot = await getDocs(q);
-		const array = [];
+		const products = [];
 		querySnapshot.forEach(doc => {
-			array.push(doc.data());
+			products.push(doc.data());
 		});
-		return array;
+		return products;
 	} catch (error) {
 		console.error(error);
 	}
@@ -96,6 +96,25 @@ export const getProductByHandle = async handle => {
 			product = doc.data();
 		});
 		return product;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+export const searchProducts = async search => {
+	try {
+		const products = await getProducts();
+
+		const filteredProducts = products.filter(product => {
+			return Object.values(product).some(value => {
+				if (typeof value === 'string') {
+					return value.toLowerCase().includes(search.toLowerCase());
+				}
+				return false;
+			});
+		});
+
+		return filteredProducts;
 	} catch (error) {
 		console.error(error);
 	}
