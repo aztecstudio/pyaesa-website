@@ -1,5 +1,5 @@
 import { Breadcrumbs, ProductDetail } from '@/components';
-import { getCategoryInfo, getProductByHandle } from '@/services';
+import { getCategoryInfo, getProductByHandle } from '@/services/firestore';
 
 const ProductPage = async props => {
 	const { params } = props;

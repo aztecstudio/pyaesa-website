@@ -5,9 +5,11 @@ import styles from './ContactCard.module.scss';
 export const ContactCard = () => {
 	return (
 		<section>
-			<h2>Contacto</h2>
+			<h2>
+				Contactanos <span>ahora</span>
+			</h2>
 			<div className={styles.ContactCard}>
-				<h3>Contactanos a través de:</h3>
+				<h3>Ponte en contacto con nosotros a través de:</h3>
 				<section className={styles.ContactCard__info}>
 					<section>
 						<div>

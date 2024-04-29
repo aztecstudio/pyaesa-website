@@ -1,0 +1,14 @@
+.Container {
+  width: 24px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid lightblue;
+  border-right-color: $contrast-secondary;
+  animation: l2 1s infinite linear;
+}
+
+@keyframes l2 {
+  to {
+    transform: rotate(1turn)
+  }
+}

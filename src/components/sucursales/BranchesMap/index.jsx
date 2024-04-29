@@ -17,7 +17,7 @@ export const BranchesMap = ({ branches }) => {
 	const [openInfoWindow, setOpenInfoWindow] = useState({});
 
 	useEffect(() => {
-		fetch('/api')
+		fetch('/api/maps')
 			.then(res => res.json())
 			.then(data => setGoogleCredentials(data));
 	}, []);

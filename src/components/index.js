@@ -2,6 +2,7 @@ export { Header } from './shared/Header';
 export { Hero } from './shared/Hero';
 export { HtmlParser } from './shared/HtmlParser';
 export { Breadcrumbs } from './shared/Breadcrumbs';
+export { Loader } from './shared/Loader';
 
 export { Overview } from './home/Overview';
 export { MainProducts } from './home/MainProducts';

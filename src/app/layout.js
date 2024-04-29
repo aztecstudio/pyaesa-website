@@ -2,6 +2,7 @@ import { Montserrat } from 'next/font/google';
 import '@/scss/globals.scss';
 import { Header, Hero } from '@/components';
 import { Footer } from '@/components/shared/Footer';
+import { Toaster } from 'react-hot-toast';
 
 const montserrat = Montserrat({
 	weight: ['300', '400', '500', '600', '700'],
@@ -22,6 +23,12 @@ export default function RootLayout({ children }) {
 				<main>
 					<Hero />
 					{children}
+					<Toaster
+						position='bottom-center'
+						toastOptions={{
+							className: 'toaster',
+						}}
+					/>
 				</main>
 				<Footer />
 			</body>

@@ -20,10 +20,32 @@
     @include input();
   }
 
+  .invalid {
+    border: 1px solid $contrast-primary !important;
+  }
+
+  .errorMsg {
+    color: $contrast-primary;
+    padding: .2rem 0 0 .4rem;
+  }
+
   &__button {
     grid-column: 1 / -1;
     @include btn($bgColor: $contrast-secondary);
     margin: auto;
+    height: 4rem;
+    @include flex(row, center, center);
+
+    &:not([disabled]):active {
+      transform: scale(0.95);
+    }
+
+    &:disabled {
+      color: $color-primary;
+      background-color: #808080;
+      outline: none;
+      cursor: default;
+    }
   }
 
   @include tablet {

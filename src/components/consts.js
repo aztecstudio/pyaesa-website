@@ -34,3 +34,26 @@ export const DYNAMIC_IDS = {
 	maderas: 'id-6',
 	krylon: 'id-7',
 };
+
+export const inputProps = [
+	{
+		id: 'idName',
+		label: 'Nombre',
+		name: 'name',
+	},
+	{
+		id: 'idPhone',
+		label: 'Teléfono',
+		name: 'phone',
+	},
+	{
+		id: 'idEmail',
+		label: 'Email',
+		name: 'email',
+	},
+	{
+		id: 'idSubject',
+		label: 'Asunto',
+		name: 'subject',
+	},
+];

@@ -112,6 +112,10 @@
     font-size: 1.4rem;
     font-weight: 500;
     color: $text-color-soft;
+
+    span {
+      color: $contrast-primary;
+    }
   }
 
   input,
