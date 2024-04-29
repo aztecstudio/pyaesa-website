@@ -1,4 +1,4 @@
-import { db } from '@/config/firebase';
+import { db, storage } from '@/config/firebase';
 import {
 	collection,
 	doc,
@@ -7,6 +7,7 @@ import {
 	query,
 	where,
 } from 'firebase/firestore';
+import { getDownloadURL, listAll, ref } from 'firebase/storage';
 
 const categoriesCollectionRef = collection(db, 'product_cats');
 const productsCollectionRef = collection(db, 'products');
@@ -15,12 +16,14 @@ const branchesCollectionRef = collection(db, 'branches');
 export const getAllCategories = async () => {
 	try {
 		const q = query(categoriesCollectionRef);
+
 		const querySnapshot = await getDocs(q);
-		const array = [];
+		const categories = [];
 		querySnapshot.forEach(doc => {
-			array.push(doc.data());
+			categories.push(doc.data());
 		});
-		return array;
+
+		return categories;
 	} catch (error) {
 		console.error(error);
 	}
@@ -29,12 +32,14 @@ export const getAllCategories = async () => {
 export const getMainCategories = async () => {
 	try {
 		const q = query(categoriesCollectionRef, where('parent', '==', 0)); // Main categories parent = 0
+
 		const querySnapshot = await getDocs(q);
-		const array = [];
+		const mainCategories = [];
 		querySnapshot.forEach(doc => {
-			array.push(doc.data());
+			mainCategories.push(doc.data());
 		});
-		return array;
+
+		return mainCategories;
 	} catch (error) {
 		console.error(error);
 	}
@@ -44,21 +49,21 @@ export const getCategoryInfo = async (categoryId, currentCatPathname = '') => {
 	try {
 		const docRef = doc(db, 'product_cats', categoryId.toString());
 		const docSnap = await getDoc(docRef);
-		const data = docSnap.data();
+		const category = docSnap.data();
 
 		const catPathname = currentCatPathname
-			? `${data.handle}/${currentCatPathname}`
-			: `${data.handle}`;
+			? `${category.handle}/${currentCatPathname}`
+			: `${category.handle}`;
 
-		if (data.parent) {
-			const parentInfo = await getCategoryInfo(data.parent, catPathname);
+		if (category.parent) {
+			const parentInfo = await getCategoryInfo(category.parent, catPathname);
 			return {
-				...data,
+				...category,
 				parentHandle: parentInfo.handle,
 				catPathname: parentInfo.catPathname,
 			};
 		} else {
-			return { ...data, catPathname };
+			return { ...category, catPathname };
 		}
 	} catch (error) {
 		console.error(error);
@@ -76,11 +81,13 @@ export const getProducts = async (categoryId = undefined) => {
 		} else {
 			q = query(productsCollectionRef);
 		}
+
 		const querySnapshot = await getDocs(q);
 		const products = [];
 		querySnapshot.forEach(doc => {
 			products.push(doc.data());
 		});
+
 		return products;
 	} catch (error) {
 		console.error(error);
@@ -88,13 +95,15 @@ export const getProducts = async (categoryId = undefined) => {
 };
 
 export const getProductByHandle = async handle => {
-	const q = query(collection(db, 'products'), where('handle', '==', handle));
-	let product;
 	try {
+		const q = query(collection(db, 'products'), where('handle', '==', handle));
+
 		const querySnapshot = await getDocs(q);
+		let product;
 		querySnapshot.forEach(doc => {
 			product = doc.data();
 		});
+
 		return product;
 	} catch (error) {
 		console.error(error);
@@ -120,14 +129,34 @@ export const searchProducts = async search => {
 	}
 };
 
-export const getBranches = async () => {
-	const q = query(branchesCollectionRef);
+export const getPromoImage = async () => {
 	try {
+		const imagesRef = ref(storage, 'promos-images/');
+
+		const res = await listAll(imagesRef);
+		const images = res.items;
+
+		images.sort((a, b) => b.name.localeCompare(a.name));
+		const lastImageRef = images[0];
+		const imageUrl = await getDownloadURL(lastImageRef);
+
+		return imageUrl;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+export const getBranches = async () => {
+	try {
+		const q = query(branchesCollectionRef);
+
 		const querySnapshot = await getDocs(q);
 		const array = [];
+
 		querySnapshot.forEach(doc => {
 			array.push(doc.data());
 		});
+
 		return array;
 	} catch (error) {
 		console.error(error);

@@ -6,7 +6,7 @@ export const ContactCard = () => {
 	return (
 		<section>
 			<h2>
-				Contactanos <span>ahora</span>
+				Contáctanos <span>ahora</span>
 			</h2>
 			<div className={styles.ContactCard}>
 				<h3>Ponte en contacto con nosotros a través de:</h3>

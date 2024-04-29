@@ -1,5 +1,14 @@
+import { PromoImage } from '@/components';
+
 const Promos = () => {
-	return <h1>Promos</h1>;
+	return (
+		<section>
+			<h2>
+				Nuestras <span>promociones del mes</span>
+			</h2>
+			<PromoImage />
+		</section>
+	);
 };
 
 export default Promos;

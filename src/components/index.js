@@ -21,3 +21,5 @@ export { ProductCategories } from './productos/ProductCategories';
 export { ProductsList } from './productos/ProductsList';
 
 export { ProductDetail } from './producto/ProductDetail';
+
+export { PromoImage } from './promos/PromoImage';
