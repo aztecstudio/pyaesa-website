@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './MainProducts.module.scss';
 import Link from 'next/link';
-import { getProducts } from '@/services/firestore';
+import { getProducts } from '@/services/database';
 
 export const MainProducts = async () => {
 	const products = await getProducts();

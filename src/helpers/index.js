@@ -1,4 +1,4 @@
-const { getAllCategories, getMainCategories } = require('@/services/firestore');
+import { getAllCategories, getMainCategories } from '@/services/database';
 
 export const filterCategoryData = async categories => {
 	let categoriesToShow = [];

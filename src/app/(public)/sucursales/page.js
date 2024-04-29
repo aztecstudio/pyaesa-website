@@ -1,5 +1,5 @@
 import { Branches } from '@/components';
-import { getBranches } from '@/services/firestore';
+import { getBranches } from '@/services/database';
 
 const BranchesPage = async () => {
 	const branches = await getBranches();

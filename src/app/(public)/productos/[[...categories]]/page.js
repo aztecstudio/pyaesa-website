@@ -1,7 +1,7 @@
 import { ProductCategories, ProductsList } from '@/components';
 import { ProductsNavbar } from '@/components/public/shared/ProductsNavbar';
 import { filterCategoryData } from '@/helpers';
-import { getProducts, searchProducts } from '@/services/firestore';
+import { getProducts, searchProducts } from '@/services/database';
 
 const ProductsPage = async props => {
 	const { categories } = props?.params;

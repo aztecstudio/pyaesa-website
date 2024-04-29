@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './PromoImage.module.scss';
-import { getPromoImage } from '@/services/firestore';
+import { getPromoImage } from '@/services/files';
 
 export const PromoImage = async () => {
 	const promoImage = await getPromoImage();

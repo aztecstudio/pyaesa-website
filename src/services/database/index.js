@@ -1,4 +1,4 @@
-import { db, storage } from '@/config/firebase';
+import { db } from '@/config/firebase';
 import {
 	collection,
 	doc,
@@ -7,7 +7,6 @@ import {
 	query,
 	where,
 } from 'firebase/firestore';
-import { getDownloadURL, listAll, ref } from 'firebase/storage';
 
 const categoriesCollectionRef = collection(db, 'product_cats');
 const productsCollectionRef = collection(db, 'products');
@@ -124,23 +123,6 @@ export const searchProducts = async search => {
 		});
 
 		return filteredProducts;
-	} catch (error) {
-		console.error(error);
-	}
-};
-
-export const getPromoImage = async () => {
-	try {
-		const imagesRef = ref(storage, 'promos-images/');
-
-		const res = await listAll(imagesRef);
-		const images = res.items;
-
-		images.sort((a, b) => b.name.localeCompare(a.name));
-		const lastImageRef = images[0];
-		const imageUrl = await getDownloadURL(lastImageRef);
-
-		return imageUrl;
 	} catch (error) {
 		console.error(error);
 	}
