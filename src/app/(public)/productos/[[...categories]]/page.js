@@ -1,5 +1,5 @@
 import { ProductCategories, ProductsList } from '@/components';
-import { ProductsNavbar } from '@/components/shared/ProductsNavbar';
+import { ProductsNavbar } from '@/components/public/shared/ProductsNavbar';
 import { filterCategoryData } from '@/helpers';
 import { getProducts, searchProducts } from '@/services/firestore';
 

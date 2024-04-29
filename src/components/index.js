@@ -1,25 +1,27 @@
-export { Header } from './shared/Header';
-export { Hero } from './shared/Hero';
 export { HtmlParser } from './shared/HtmlParser';
 export { Breadcrumbs } from './shared/Breadcrumbs';
 export { Loader } from './shared/Loader';
 
-export { Overview } from './home/Overview';
-export { MainProducts } from './home/MainProducts';
-export { BranchesCard } from './home/BranchesCard';
-export { ContactCard } from './home/ContactCard';
+export { Header } from './public/shared/Header';
+export { Hero } from './public/shared/Hero';
+export { Footer } from './public/shared/Footer';
 
-export { AboutUs } from './nuestra-empresa/AboutUs';
-export { AboutUsGrid } from './nuestra-empresa/AboutUsGrid';
-export { Environment } from './nuestra-empresa/Environment';
+export { Overview } from './public/home/Overview';
+export { MainProducts } from './public/home/MainProducts';
+export { BranchesCard } from './public/home/BranchesCard';
+export { ContactCard } from './public/home/ContactCard';
 
-export { Branches } from './sucursales/Branches';
+export { AboutUs } from './public/nuestra-empresa/AboutUs';
+export { AboutUsGrid } from './public/nuestra-empresa/AboutUsGrid';
+export { Environment } from './public/nuestra-empresa/Environment';
 
-export { ContactUs } from './contacto/ContactUs';
+export { Branches } from './public/sucursales/Branches';
 
-export { ProductCategories } from './productos/ProductCategories';
-export { ProductsList } from './productos/ProductsList';
+export { ContactUs } from './public/contacto/ContactUs';
 
-export { ProductDetail } from './producto/ProductDetail';
+export { ProductCategories } from './public/productos/ProductCategories';
+export { ProductsList } from './public/productos/ProductsList';
 
-export { PromoImage } from './promos/PromoImage';
+export { ProductDetail } from './public/producto/ProductDetail';
+
+export { PromoImage } from './public/promociones/PromoImage';

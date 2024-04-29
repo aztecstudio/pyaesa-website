@@ -25,30 +25,6 @@ html {
   font-size: 62.5%;
 }
 
-main {
-  position: relative;
-  min-height: 100vh;
-  padding-bottom: 2rem;
-  background: $color-primary;
-  box-shadow: 10px 0 15px -5px $shadow, -10px 0 15px -5px $shadow;
-
-  &>section:not(:first-child) {
-    padding: 3rem 2rem;
-
-    @include mobileLg {
-      padding: 3rem 4rem;
-    }
-  }
-
-  @include desktop {
-    margin: 0 3rem;
-  }
-
-  @include desktopLg {
-    margin: 0 6rem;
-  }
-}
-
 button {
   border: none;
   outline: none;

@@ -1,4 +1,4 @@
-import { Breadcrumbs } from '../Breadcrumbs';
+import { Breadcrumbs } from '../../../shared/Breadcrumbs';
 import { SearchForm } from '../SearchForm';
 import styles from './ProductsNavbar.module.scss';
 
