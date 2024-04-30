@@ -10,7 +10,6 @@ export const PromoImage = ({ imageUrl }) => {
 					width={512}
 					height={1690}
 					alt='Imagén de promoción del mes'
-					priority
 				/>
 			) : (
 				<h3>¡No hay promociones para mostrar!</h3>
