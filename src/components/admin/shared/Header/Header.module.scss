@@ -32,5 +32,9 @@
 
   &:hover {
     background-color: $shadow;
+
+    svg {
+      color: $contrast-primary;
+    }
   }
 }
