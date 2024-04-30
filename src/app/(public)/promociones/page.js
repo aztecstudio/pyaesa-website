@@ -1,15 +1,12 @@
 import { PromoImage } from '@/components';
-import { getPromoImage } from '@/services/files';
 
-const PromosPage = async () => {
-	const imageUrl = await getPromoImage();
-
+const PromosPage = () => {
 	return (
 		<section>
 			<h2>
 				Nuestras <span>promociones del mes</span>
 			</h2>
-			<PromoImage imageUrl={imageUrl} />
+			<PromoImage />
 		</section>
 	);
 };

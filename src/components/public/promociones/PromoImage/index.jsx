@@ -1,7 +1,18 @@
+'use client';
 import Image from 'next/image';
 import styles from './PromoImage.module.scss';
+import { useEffect, useState } from 'react';
+import { getPromoImage } from '@/services/files';
 
-export const PromoImage = ({ imageUrl }) => {
+export const PromoImage = () => {
+	const [imageUrl, setImageUrl] = useState('');
+
+	useEffect(() => {
+		getPromoImage().then(promoImage => {
+			setImageUrl(promoImage);
+		});
+	}, []);
+
 	return (
 		<div className={styles.ImageContainer}>
 			{imageUrl ? (
@@ -11,9 +22,7 @@ export const PromoImage = ({ imageUrl }) => {
 					height={1690}
 					alt='Imagén de promoción del mes'
 				/>
-			) : (
-				<h3>¡No hay promociones para mostrar!</h3>
-			)}
+			) : null}
 		</div>
 	);
 };
