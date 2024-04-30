@@ -20,14 +20,14 @@ export const Header = () => {
 		<header className={styles.Header}>
 			<Menu isHidden={isHidden} setIsHidden={setIsHidden} />
 			<nav className={styles.Header__navbar}>
-				<div className={styles.Header__navbar__logo}>
+				<Link href='/' className={styles.Header__navbar__logo}>
 					<Image
 						src='/images/sw-logo-header.png'
 						width={208}
 						height={388}
 						alt='Sherwin Williams logo'
 					/>
-				</div>
+				</Link>
 				<ul>
 					{PAGES.map((item, i) => (
 						<li key={`${item.label}-${i}`}>
