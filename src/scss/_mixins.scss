@@ -29,7 +29,7 @@
   align-items: $align;
 }
 
-@mixin btn ($maxWidth: 250px, $bgColor) {
+@mixin btn ($maxWidth: 250px, $bgColor: $contrast-secondary) {
   width: 100%;
   max-width: $maxWidth;
   padding: 1.2rem 2rem;

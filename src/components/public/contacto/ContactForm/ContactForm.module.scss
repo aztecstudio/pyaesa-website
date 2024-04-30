@@ -30,11 +30,12 @@
   }
 
   &__button {
-    grid-column: 1 / -1;
-    @include btn($bgColor: $contrast-secondary);
-    margin: auto;
-    height: 4rem;
+    @include btn();
     @include flex(row, center, center);
+    grid-column: 1 / -1;
+    margin: auto;
+    max-height: 4rem;
+    padding: 2rem;
 
     &:not([disabled]):active {
       transform: scale(0.95);

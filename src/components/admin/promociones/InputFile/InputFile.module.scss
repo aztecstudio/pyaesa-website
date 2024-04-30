@@ -1,0 +1,83 @@
+.Container {
+  height: 100%;
+  @include flex(column, center, center);
+  gap: 1rem;
+}
+
+.FileUpload {
+  height: 100%;
+  max-height: 400px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #cacaca;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 48px 35px -48px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #f2f9ff;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .uploadFile {
+      height: 80px;
+      fill: $text-color-soft;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-weight: 400;
+      color: $text-color-soft;
+
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+}
+
+.BtnUpload {
+  @include btn();
+  @include flex(row, center, center);
+  max-height: 4rem;
+  padding: 2rem;
+
+  &:hover {
+    background-color: $contrast-secondary;
+    color: $color_primary;
+    outline: none;
+    filter: brightness(1.1);
+  }
+
+  &:not([disabled]):active {
+    transform: scale(0.99);
+  }
+
+  &:disabled {
+    background-color: $text-color-soft;
+    outline: none;
+    cursor: default;
+    filter: none;
+  }
+}

@@ -1,0 +1,19 @@
+.Container {
+  height: 100%;
+  @include flex(column);
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: $color-primary;
+
+  p {
+    padding-bottom: 1rem;
+  }
+
+  @include tablet {
+    border-radius: .6rem;
+  }
+
+  @include desktop {
+    padding: 2rem 4rem;
+  }
+}

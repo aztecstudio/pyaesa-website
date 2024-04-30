@@ -105,7 +105,7 @@ export const ContactForm = () => {
 				className={styles.Form__button}
 				disabled={Object.keys(errors).length > 0 || isLoading}
 			>
-				{isLoading ? <Loader /> : 'Enviar'}
+				{!isLoading ? 'Enviar' : <Loader />}
 			</button>
 		</form>
 	);

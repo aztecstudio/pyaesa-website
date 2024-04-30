@@ -1,7 +1,7 @@
 export const sendMail = async data => {
 	const res = await fetch('/api/mail', {
 		method: 'POST',
-		body: JSON.stringify(data),
+		body: data,
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json',

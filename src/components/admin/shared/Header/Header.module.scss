@@ -1,0 +1,36 @@
+.Container {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 2rem;
+  @include flex(row, space-between, center);
+  color: $color-primary;
+
+  @include mobileLg {
+    padding: 0 6rem;
+  }
+
+  @include desktop {
+    padding: 0 12rem;
+  }
+}
+
+.Logo {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.Logout {
+  @include flex(row, center, center);
+  padding: .8rem;
+  color: $color-primary;
+  background-color: transparent;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $shadow;
+  }
+}

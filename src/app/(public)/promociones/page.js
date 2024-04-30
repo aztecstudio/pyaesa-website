@@ -1,6 +1,6 @@
 import { PromoImage } from '@/components';
 
-const Promos = () => {
+const PromosPage = () => {
 	return (
 		<section>
 			<h2>
@@ -11,4 +11,4 @@ const Promos = () => {
 	);
 };
 
-export default Promos;
+export default PromosPage;
