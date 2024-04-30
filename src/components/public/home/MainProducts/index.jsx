@@ -2,10 +2,12 @@ import Image from 'next/image';
 import styles from './MainProducts.module.scss';
 import Link from 'next/link';
 import { getProducts } from '@/services/database';
+import { getRandomProducts } from '@/utils/products';
 
 export const MainProducts = async () => {
 	const products = await getProducts();
-	const mainProducts = products.slice(1, 5);
+	const productsToDisplay = 4;
+	const mainProducts = getRandomProducts(products, productsToDisplay);
 
 	return (
 		<section>
