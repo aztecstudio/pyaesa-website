@@ -3,7 +3,7 @@ import { HtmlParser } from '@/components';
 import Link from 'next/link';
 import styles from './ProductDetail.module.scss';
 
-export const ProductDetail = async ({ product, categoryInfo }) => {
+export const ProductDetail = ({ product, categoryInfo }) => {
 	const { title, image, content } = product ?? {};
 	const { name, catPathname } = categoryInfo ?? {};
 

@@ -7,4 +7,5 @@ export const env = {
 	APP_ID: process.env.APP_ID,
 	EMAIL_USER: process.env.EMAIL_USER,
 	EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
+	HOST: process.env.HOST,
 };

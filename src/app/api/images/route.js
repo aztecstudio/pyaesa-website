@@ -1,4 +1,13 @@
-import { uploadImage } from '@/services/files';
+import { getPromoImage, uploadImage } from '@/services/files';
+
+export async function GET() {
+	try {
+		const promoImage = await getPromoImage();
+		return Response.json({ data: promoImage, success: true, status: 200 });
+	} catch (error) {
+		return Response.json({ error: error.message, status: 400 });
+	}
+}
 
 export async function POST(req) {
 	const data = await req.formData();

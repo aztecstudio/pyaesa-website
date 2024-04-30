@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import styles from './PromoImage.module.scss';
+import { env } from '@/config/env';
 
-export const PromoImage = ({ imageUrl }) => {
+export const PromoImage = async () => {
+	const res = await fetch(`${env.HOST}/api/images`);
+	const json = await res.json();
+	const imageUrl = json.data;
+
 	return (
 		<div className={styles.ImageContainer}>
 			{imageUrl ? (
