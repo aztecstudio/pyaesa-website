@@ -1,0 +1,15 @@
+.Container {
+  @include flex(column, center, center);
+  position: relative;
+  height: 100vh;
+  padding: 6rem 0;
+  background: $color-primary;
+
+  h2 {
+    text-align: center;
+  }
+
+  @include tablet {
+    padding: 6rem 2rem;
+  }
+}

@@ -16,6 +16,7 @@ export { ProductDetail } from './public/producto/ProductDetail';
 export { PromoImage } from './public/promociones/PromoImage';
 
 export { Header as AdminHeader } from './admin/shared/Header';
+export { LoginForm } from './admin/auth/LoginForm';
 export { InputFile } from './admin/promociones/InputFile';
 
 export { HtmlParser } from './shared/HtmlParser';

@@ -1,7 +1,7 @@
 import { AdminHeader } from '@/components';
-import styles from './AdminLayout.module.scss';
+import styles from './PrivateLayout.module.scss';
 
-const AdminLayout = ({ children }) => {
+const PrivateLayout = ({ children }) => {
 	return (
 		<main className={styles.Container}>
 			<AdminHeader />
@@ -10,4 +10,4 @@ const AdminLayout = ({ children }) => {
 	);
 };
 
-export default AdminLayout;
+export default PrivateLayout;
