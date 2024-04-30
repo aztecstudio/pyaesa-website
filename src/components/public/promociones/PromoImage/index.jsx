@@ -1,18 +1,9 @@
-'use client';
 import Image from 'next/image';
 import styles from './PromoImage.module.scss';
-import { useEffect, useState } from 'react';
+import { getPromoImage } from '@/services/files';
 
-export const PromoImage = () => {
-	const [imageUrl, setImageUrl] = useState('');
-
-	useEffect(() => {
-		fetch('/api/images')
-			.then(res => res.json())
-			.then(json => {
-				setImageUrl(json.data);
-			});
-	}, []);
+export const PromoImage = async () => {
+	const imageUrl = await getPromoImage();
 
 	return (
 		<div className={styles.ImageContainer}>

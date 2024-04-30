@@ -5,7 +5,8 @@ import {
 	InfoWindow,
 } from '@vis.gl/react-google-maps';
 import styles from './BranchesMap.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { env } from '@/config/env';
 
 const CENTER = {
 	lat: 25.487347924579087,
@@ -13,14 +14,8 @@ const CENTER = {
 };
 
 export const BranchesMap = ({ branches }) => {
-	const [googleCredentials, setGoogleCredentials] = useState({});
 	const [openInfoWindow, setOpenInfoWindow] = useState({});
-
-	useEffect(() => {
-		fetch('/api/maps')
-			.then(res => res.json())
-			.then(data => setGoogleCredentials(data));
-	}, []);
+	const { GOOGLE_MAPS_API_KEY, MAP_ID } = env;
 
 	const handleMarkerClick = id => {
 		setOpenInfoWindow({ [id]: true });
@@ -30,14 +25,10 @@ export const BranchesMap = ({ branches }) => {
 		setOpenInfoWindow({ [id]: false });
 	};
 
-	return googleCredentials?.apiKey ? (
-		<APIProvider apiKey={googleCredentials?.apiKey}>
+	return GOOGLE_MAPS_API_KEY ? (
+		<APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
 			<div className={styles.Container}>
-				<Map
-					defaultCenter={CENTER}
-					defaultZoom={11}
-					mapId={googleCredentials?.mapId}
-				>
+				<Map defaultCenter={CENTER} defaultZoom={11} mapId={MAP_ID}>
 					{branches.map(b => {
 						const markerKey = `marker-${b.id}`;
 						const infoWindowKey = `infoWindow-${b.id}`;

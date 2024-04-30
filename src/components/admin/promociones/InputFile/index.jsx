@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './InputFile.module.scss';
 import { CheckCircle } from 'react-feather';
-import { sendImage } from '@/services/files';
+import { uploadImage } from '@/services/files';
 import toast from 'react-hot-toast';
 import { Loader } from '@/components';
 
@@ -27,9 +27,7 @@ export const InputFile = () => {
 		try {
 			const formData = new FormData();
 			formData.append('image', file);
-			const res = await sendImage(formData);
-			if (res.status === 400)
-				throw new Error('Ocurrió un error al tratar de subir la imágen');
+			await uploadImage(file);
 			toast.success('Imágen subida con éxito!');
 			setFile(null);
 		} catch (error) {

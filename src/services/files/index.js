@@ -31,12 +31,3 @@ export const uploadImage = async file => {
 
 	await uploadBytes(storageRef, file);
 };
-
-export const sendImage = async data => {
-	const res = await fetch('/api/images', {
-		method: 'POST',
-		body: data,
-	});
-
-	return await res.json();
-};
