@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from 'react-feather';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { PAGES } from '@/components/consts';
+import { PAGES } from '@/utils/consts';
 import styles from './Menu.module.scss';
 
 export const Menu = ({ isHidden, setIsHidden }) => {

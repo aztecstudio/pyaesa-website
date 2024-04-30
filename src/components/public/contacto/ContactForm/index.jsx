@@ -1,8 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import styles from './ContactForm.module.scss';
-import { inputProps } from '@/components/consts';
-import { validateFormValues } from '@/components/utils';
+import { inputProps } from '@/utils/consts';
+import { validateFormValues } from '@/utils/validations';
 import { sendMail } from '@/services/mail';
 import { Loader } from '@/components';
 import toast from 'react-hot-toast';

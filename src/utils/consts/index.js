@@ -57,3 +57,11 @@ export const inputProps = [
 		name: 'subject',
 	},
 ];
+
+export const CONTACT_MESSAGE_FIELDS = {
+	name: 'Nombre',
+	phone: 'Teléfono',
+	email: 'Email',
+	subject: 'Asunto',
+	message: 'Mensaje',
+};

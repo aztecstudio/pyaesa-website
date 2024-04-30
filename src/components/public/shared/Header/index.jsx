@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { Menu as IconMenu } from 'react-feather';
 import { Menu } from '../Menu';
-import { PAGES } from '@/components/consts';
+import { PAGES } from '@/utils/consts';
 import styles from './Header.module.scss';
 
 export const Header = () => {

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './ProductCategories.module.scss';
-import { DYNAMIC_IDS } from '@/components/consts';
+import { DYNAMIC_IDS } from '@/utils/consts';
 import Link from 'next/link';
 
 export const ProductCategories = ({

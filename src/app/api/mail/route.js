@@ -1,5 +1,5 @@
 import { transporter, mailOptions } from '@/config/nodemailer';
-import { generateEmailContent } from '@/helpers';
+import { generateEmailContent } from '@/utils/email';
 
 export async function POST(req) {
 	const data = await req.json();
