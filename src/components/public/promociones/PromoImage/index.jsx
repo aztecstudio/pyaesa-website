@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import styles from './PromoImage.module.scss';
-import { getPromoImage } from '@/services/database';
+import { getPromoImage } from '@/services/files';
 
 export const PromoImage = async () => {
-	const { imageUrl } = await getPromoImage();
+	const imageUrl = await getPromoImage();
 
 	return (
 		<div className={styles.ImageContainer}>

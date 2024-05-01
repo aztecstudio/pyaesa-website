@@ -4,15 +4,12 @@ import {
 	doc,
 	getDoc,
 	getDocs,
-	orderBy,
 	query,
-	setDoc,
 	where,
 } from 'firebase/firestore';
 
 const categoriesCollectionRef = collection(db, 'product_cats');
 const productsCollectionRef = collection(db, 'products');
-const promoImagesCollectionRef = collection(db, 'promos_images');
 
 export const getAllCategories = async () => {
 	try {
@@ -125,32 +122,6 @@ export const searchProducts = async search => {
 		});
 
 		return filteredProducts;
-	} catch (error) {
-		console.error(error);
-	}
-};
-
-export const addPromoImage = async image => {
-	try {
-		const imageRef = doc(promoImagesCollectionRef);
-		const imageDoc = { ...image, id: imageRef.id };
-		await setDoc(imageRef, imageDoc);
-	} catch (error) {
-		console.error(error);
-	}
-};
-
-export const getPromoImage = async () => {
-	try {
-		const q = query(promoImagesCollectionRef, orderBy('createdAt', 'desc'));
-
-		const querySnapshot = await getDocs(q);
-		const images = [];
-		querySnapshot.forEach(doc => {
-			images.push(doc.data());
-		});
-
-		return images[0];
 	} catch (error) {
 		console.error(error);
 	}
