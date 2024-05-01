@@ -1,22 +1,6 @@
 import { storage } from '@/config/firebase';
-import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
-
-export const getPromoImage = async () => {
-	try {
-		const imagesRef = ref(storage, 'promos-images/');
-
-		const res = await listAll(imagesRef);
-		const images = res.items;
-
-		images.sort((a, b) => b.name.localeCompare(a.name));
-		const lastImageRef = images[0];
-		const imageUrl = await getDownloadURL(lastImageRef);
-
-		return imageUrl;
-	} catch (error) {
-		console.error(error);
-	}
-};
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { addPromoImage } from '../database';
 
 export const uploadImage = async file => {
 	const now = new Date();
@@ -29,5 +13,16 @@ export const uploadImage = async file => {
 	const filePath = `promos-images/${imageName}`;
 	const storageRef = ref(storage, filePath);
 
-	await uploadBytes(storageRef, file);
+	const { ref: imageRef, metadata } = await uploadBytes(storageRef, file);
+	const imageUrl = await getDownloadURL(imageRef);
+
+	const imageDoc = {
+		name: imageName,
+		imageUrl,
+		path: metadata.fullPath,
+		createdAt: metadata.timeCreated,
+		updatedAt: metadata.updated,
+	};
+
+	addPromoImage(imageDoc);
 };

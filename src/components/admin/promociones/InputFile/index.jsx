@@ -23,10 +23,8 @@ export const InputFile = () => {
 	};
 
 	const handleUploadFile = async () => {
-		setIsLoading(true);
 		try {
-			const formData = new FormData();
-			formData.append('image', file);
+			setIsLoading(true);
 			await uploadImage(file);
 			toast.success('Imágen subida con éxito!');
 			setFile(null);
