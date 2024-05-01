@@ -17,7 +17,9 @@ export const ProductsNavbar = ({ categories, products = undefined }) => {
 
 	return (
 		<div className={styles.Container}>
-			{categories?.length > 0 ? <ArrowLeftCircle onClick={handleBack} /> : null}
+			{categories?.length > 0 ? (
+				<ArrowLeftCircle onClick={handleBack} className={styles.backBtn} />
+			) : null}
 			<Breadcrumbs categories={categories} />
 			{products ? (
 				<SearchForm>

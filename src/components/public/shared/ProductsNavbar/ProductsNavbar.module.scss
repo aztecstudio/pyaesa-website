@@ -5,7 +5,7 @@
   gap: 2rem;
   padding: 0 2rem;
 
-  svg {
+  .backBtn {
     cursor: pointer;
   }
 
@@ -14,7 +14,7 @@
   }
 
   @include tablet {
-    svg {
+    .backBtn {
       display: none;
     }
   }
