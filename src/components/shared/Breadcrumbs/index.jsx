@@ -24,7 +24,7 @@ export const Breadcrumbs = ({ categories }) => {
 								href={`${!isActive ? `/productos/${pathname}` : '#'}`}
 								className={`${styles.Link} ${isActive ? styles.active : ''}`}
 							>
-								{cat}
+								{cat.split('-').join(' ')}
 							</Link>
 						</li>
 					);
