@@ -1,6 +1,21 @@
 .Container {
-  position: relative;
-  height: 3.2rem;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  @include flex(row, space-between);
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 2rem;
+
+  svg {
+    cursor: pointer;
+  }
+
+  @include mobileLg {
+    padding: 0 4rem;
+  }
+
+  @include tablet {
+    svg {
+      display: none;
+    }
+  }
 }

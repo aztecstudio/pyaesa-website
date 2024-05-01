@@ -1,6 +1,9 @@
 .Container {
-  display: inline-block;
-  padding: 0 4rem;
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
 }
 
 .List {

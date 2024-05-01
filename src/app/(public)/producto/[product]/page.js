@@ -1,4 +1,5 @@
-import { Breadcrumbs, ProductDetail } from '@/components';
+import { ProductDetail } from '@/components';
+import { ProductsNavbar } from '@/components/public/shared/ProductsNavbar';
 import { getCategoryInfo, getProductByHandle } from '@/services/database';
 
 const ProductPage = async props => {
@@ -10,7 +11,7 @@ const ProductPage = async props => {
 
 	return (
 		<>
-			<Breadcrumbs categories={[...categories, product.title]} />
+			<ProductsNavbar categories={[...categories, product.title]} />
 			<section>
 				<ProductDetail product={product} categoryInfo={categoryInfo} />
 			</section>

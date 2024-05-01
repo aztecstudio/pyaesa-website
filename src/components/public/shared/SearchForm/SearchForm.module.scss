@@ -1,7 +1,6 @@
 .Form {
-  position: absolute;
-  bottom: 0;
-  right: 4rem;
+  // margin: auto;
+  text-align: center;
 
   &__inputSearch {
     position: relative;
@@ -28,9 +27,8 @@
   }
 
   span {
-    position: absolute;
-    bottom: -2rem;
-    margin-left: 1rem;
+    display: inline-block;
+    margin-top: .8rem;
     font-size: 1.2rem;
     font-weight: 600;
     color: $text-color-soft;
