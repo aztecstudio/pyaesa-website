@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
-import styles from './InputFile.module.scss';
 import { CheckCircle } from 'react-feather';
-import { uploadImage } from '@/services/files';
 import toast from 'react-hot-toast';
 import { Loader } from '@/components';
+import { uploadImage } from '@/services/files';
+import revalidatePromoImage from '@/actions';
+import styles from './InputFile.module.scss';
 
 export const InputFile = () => {
 	const [file, setFile] = useState(null);
@@ -26,6 +27,7 @@ export const InputFile = () => {
 		try {
 			setIsLoading(true);
 			await uploadImage(file);
+			await revalidatePromoImage();
 			toast.success('Imágen subida con éxito!');
 			setFile(null);
 		} catch (error) {

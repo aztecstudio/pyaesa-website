@@ -1,9 +1,20 @@
 import Image from 'next/image';
 import styles from './PromoImage.module.scss';
 import { getPromoImage } from '@/services/files';
+import { unstable_cache } from 'next/cache';
 
 export const PromoImage = async () => {
-	const imageUrl = await getPromoImage();
+	const imageUrl = await unstable_cache(
+		async () => {
+			const image = await getPromoImage();
+			return image;
+		},
+		undefined,
+		{
+			tags: ['promo_image'],
+			revalidate: false,
+		},
+	)();
 
 	return (
 		<div className={styles.ImageContainer}>
