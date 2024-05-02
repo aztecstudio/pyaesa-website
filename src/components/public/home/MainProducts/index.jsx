@@ -3,11 +3,21 @@ import styles from './MainProducts.module.scss';
 import Link from 'next/link';
 import { getProducts } from '@/services/database';
 import { getRandomProducts } from '@/utils/products';
+import { unstable_cache } from 'next/cache';
 
 export const MainProducts = async () => {
 	const products = await getProducts();
 	const productsToDisplay = 4;
-	const mainProducts = getRandomProducts(products, productsToDisplay);
+	const mainProducts = await unstable_cache(
+		async () => {
+			const data = getRandomProducts(products, productsToDisplay);
+			return data;
+		},
+		undefined,
+		{
+			revalidate: 43200,
+		},
+	)();
 
 	return (
 		<section>
