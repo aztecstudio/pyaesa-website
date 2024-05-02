@@ -4,7 +4,7 @@ import { CheckCircle } from 'react-feather';
 import toast from 'react-hot-toast';
 import { Loader } from '@/components';
 import { uploadImage } from '@/services/files';
-import revalidatePromoImage from '@/actions';
+import { revalidatePromoImage } from '@/actions';
 import styles from './InputFile.module.scss';
 
 export const InputFile = () => {
