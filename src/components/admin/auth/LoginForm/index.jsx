@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
-import styles from './LoginForm.module.scss';
+import { useRouter } from 'next/navigation';
 import { signIn } from '@/services/auth';
 import { useAuth } from '@/hooks/useAuth';
-import { useRouter } from 'next/navigation';
-import toast from 'react-hot-toast';
 import { Loader } from '@/components';
+import toast from 'react-hot-toast';
+import styles from './LoginForm.module.scss';
 
 const initialForm = {
 	values: { email: '', password: '' },
@@ -13,16 +13,16 @@ const initialForm = {
 };
 
 export const LoginForm = () => {
-	const { token } = useAuth();
+	const authUser = useAuth();
 	const [form, setForm] = useState(initialForm);
 	const { values, isLoading } = form;
 	const router = useRouter();
 
 	useEffect(() => {
-		if (token) {
+		if (authUser) {
 			router.push('/admin/promociones');
 		}
-	}, [token]);
+	}, [authUser]);
 
 	const handleChange = ({ target }) => {
 		setForm({
@@ -41,7 +41,7 @@ export const LoginForm = () => {
 			isLoading: true,
 		});
 		try {
-			await signIn(values, token);
+			await signIn(values);
 		} catch (error) {
 			console.error(error);
 			setForm({

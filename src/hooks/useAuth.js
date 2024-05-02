@@ -4,14 +4,14 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Cookies from 'js-cookie';
 
 export const useAuth = () => {
-	const [token, setToken] = useState(null);
+	const [authUser, setAuthUser] = useState(null);
 
 	useEffect(() => {
 		onAuthStateChanged(auth, async currentUser => {
 			try {
 				if (currentUser) {
+					setAuthUser(currentUser);
 					const fbToken = await currentUser.getIdToken();
-					setToken(fbToken);
 					Cookies.set('authToken', fbToken);
 				}
 			} catch (error) {
@@ -20,5 +20,5 @@ export const useAuth = () => {
 		});
 	}, []);
 
-	return { token, setToken };
+	return authUser;
 };
