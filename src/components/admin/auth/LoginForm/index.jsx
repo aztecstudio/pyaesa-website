@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { signIn } from '@/services/auth';
 import { useAuth } from '@/hooks/useAuth';
 import { Loader } from '@/components';
-import toast from 'react-hot-toast';
+import { errorHandler } from '@/utils/errors';
 import styles from './LoginForm.module.scss';
 
 const initialForm = {
@@ -36,21 +36,19 @@ export const LoginForm = () => {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		setForm({
-			...form,
-			isLoading: true,
-		});
 		try {
-			await signIn(values);
-		} catch (error) {
-			console.error(error);
 			setForm({
 				...form,
 				isLoading: true,
 			});
-			toast.error('Credenciales inválidas!');
-		} finally {
-			setForm(initialForm);
+			const isOk = await signIn(values);
+			if (isOk) setForm(initialForm);
+		} catch (error) {
+			errorHandler(error);
+			setForm({
+				...form,
+				isLoading: false,
+			});
 		}
 	};
 

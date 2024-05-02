@@ -1,15 +1,11 @@
 import { auth } from '@/config/firebase';
+import { errorHandler } from '@/utils/errors';
 import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import Cookies from 'js-cookie';
-import toast from 'react-hot-toast';
 
 export const signIn = async ({ email, password }) => {
-	try {
-		await signInWithEmailAndPassword(auth, email, password);
-	} catch (error) {
-		console.error(error);
-		toast.error('Ocurrió un error. Intentelo más tarde!');
-	}
+	const authUser = await signInWithEmailAndPassword(auth, email, password);
+	return authUser;
 };
 
 export const logout = async () => {
@@ -18,5 +14,6 @@ export const logout = async () => {
 		Cookies.remove('authToken');
 	} catch (error) {
 		console.error(error);
+		errorHandler(error);
 	}
 };

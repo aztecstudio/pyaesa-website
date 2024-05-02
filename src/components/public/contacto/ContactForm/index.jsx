@@ -1,11 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
-import styles from './ContactForm.module.scss';
 import { inputProps } from '@/utils/consts';
 import { validateFormValues } from '@/utils/validations';
 import { sendMail } from '@/services/mail';
 import { Loader } from '@/components';
+import { errorHandler } from '@/utils/errors';
 import toast from 'react-hot-toast';
+import styles from './ContactForm.module.scss';
 
 const initialForm = {
 	values: {
@@ -44,15 +45,14 @@ export const ContactForm = () => {
 
 	const handleSubmit = async e => {
 		e.preventDefault();
-		setForm({ ...form, isLoading: true });
 		try {
+			setForm({ ...form, isLoading: true });
 			await sendMail(values);
 			setForm(initialForm);
 			setTouched({});
 			toast.success('Correo enviado!');
 		} catch (error) {
-			console.error(error);
-			toast.error(error.message);
+			errorHandler(error);
 			setForm({ ...form, isLoading: false });
 		}
 	};

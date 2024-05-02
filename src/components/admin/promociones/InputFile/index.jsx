@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { Loader } from '@/components';
 import { uploadImage } from '@/services/files';
 import { revalidatePromoImage } from '@/actions';
+import { errorHandler } from '@/utils/errors';
 import styles from './InputFile.module.scss';
 
 export const InputFile = () => {
@@ -26,13 +27,14 @@ export const InputFile = () => {
 	const handleUploadFile = async () => {
 		try {
 			setIsLoading(true);
-			await uploadImage(file);
-			await revalidatePromoImage();
-			toast.success('Imágen subida con éxito!');
-			setFile(null);
+			const isOk = await uploadImage(file);
+			if (isOk) {
+				await revalidatePromoImage();
+				toast.success('Imágen subida con éxito!');
+				setFile(null);
+			}
 		} catch (error) {
-			console.error(error);
-			toast.error(error.message);
+			errorHandler(error);
 			setFile(null);
 		} finally {
 			setIsLoading(false);
