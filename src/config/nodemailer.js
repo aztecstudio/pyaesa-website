@@ -3,6 +3,7 @@ import { env } from '@/config/env';
 
 const email = env.EMAIL_USER;
 const password = env.EMAIL_PASSWORD;
+const emailTo = env.EMAIL_TO;
 
 export const transporter = nodemailer.createTransport({
 	service: 'gmail',
@@ -14,5 +15,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions = {
 	from: email,
-	to: email,
+	to: emailTo,
 };
