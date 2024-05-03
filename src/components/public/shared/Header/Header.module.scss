@@ -43,7 +43,7 @@
         .linkActive {
           @include linkUnderline(1, 80%);
           font-weight: 700;
-          background-color: $shadow;
+          background-color: $shadow-3;
         }
       }
     }
