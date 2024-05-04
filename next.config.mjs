@@ -13,7 +13,7 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'firebasestorage.googleapis.com',
 				port: '',
-				pathname: '/v0/b/pyaesa-mx-ce42a.appspot.com/o/**',
+				pathname: process.env.NEXT_PUBLIC_REMOTE_PATTERN_PATHNAME,
 			},
 		],
 	},
