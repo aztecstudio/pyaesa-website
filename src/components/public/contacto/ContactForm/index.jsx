@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { inputProps } from '@/utils/consts';
-import { validateFormValues } from '@/utils/validations';
+import { validateContactForm } from '@/utils/validations';
 import { sendMail } from '@/services/mail';
 import { Loader } from '@/components';
 import { errorHandler } from '@/utils/errors';
@@ -39,7 +39,7 @@ export const ContactForm = () => {
 	};
 
 	useEffect(() => {
-		const valuesErrors = validateFormValues(values);
+		const valuesErrors = validateContactForm(values);
 		setForm({ ...form, errors: valuesErrors });
 	}, [values]);
 

@@ -20,15 +20,6 @@
     @include input();
   }
 
-  .invalid {
-    border: 1px solid $contrast-primary !important;
-  }
-
-  .errorMsg {
-    color: $contrast-primary;
-    padding: .2rem 0 0 .4rem;
-  }
-
   &__button {
     @include btn();
     @include flex(row, center, center);
@@ -49,6 +40,15 @@
     }
   }
 
+  .invalid {
+    border: 1px solid $contrast-primary !important;
+  }
+
+  .errorMsg {
+    color: $contrast-primary;
+    padding: .2rem 0 0 .4rem;
+  }
+
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -57,5 +57,4 @@
     gap: 1rem 4rem;
     margin: 0 6rem;
   }
-
 }

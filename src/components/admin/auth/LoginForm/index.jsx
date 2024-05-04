@@ -6,16 +6,19 @@ import { useAuth } from '@/hooks/useAuth';
 import { Loader } from '@/components';
 import { errorHandler } from '@/utils/errors';
 import styles from './LoginForm.module.scss';
+import { validateLoginForm } from '@/utils/validations';
 
 const initialForm = {
 	values: { email: '', password: '' },
 	isLoading: false,
+	errors: {},
 };
 
 export const LoginForm = () => {
 	const authUser = useAuth();
 	const [form, setForm] = useState(initialForm);
-	const { values, isLoading } = form;
+	const [touched, setTouched] = useState({});
+	const { values, isLoading, errors } = form;
 	const router = useRouter();
 
 	useEffect(() => {
@@ -23,6 +26,9 @@ export const LoginForm = () => {
 			router.push('/admin/promociones');
 		}
 	}, [authUser]);
+
+	const onBlur = ({ target }) =>
+		setTouched({ ...touched, [target.name]: true });
 
 	const handleChange = ({ target }) => {
 		setForm({
@@ -34,6 +40,11 @@ export const LoginForm = () => {
 		});
 	};
 
+	useEffect(() => {
+		const valuesErrors = validateLoginForm(values);
+		setForm({ ...form, errors: valuesErrors });
+	}, [values]);
+
 	const handleSubmit = async e => {
 		e.preventDefault();
 		try {
@@ -42,7 +53,10 @@ export const LoginForm = () => {
 				isLoading: true,
 			});
 			const isOk = await signIn(values);
-			if (isOk) setForm(initialForm);
+			if (isOk) {
+				setForm(initialForm);
+				setTouched({});
+			}
 		} catch (error) {
 			errorHandler(error);
 			setForm({
@@ -61,22 +75,32 @@ export const LoginForm = () => {
 			<div className={styles.Form__inputGroup}>
 				<label htmlFor='idEmail'>Email</label>
 				<input
+					className={errors.email && touched.email ? styles.invalid : ''}
 					id='idEmail'
 					name='email'
 					type='text'
 					value={values.email}
 					onChange={handleChange}
+					onBlur={onBlur}
 				/>
+				{touched.email ? (
+					<span className={styles.errorMsg}>{errors.email}</span>
+				) : null}
 			</div>
 			<div className={styles.Form__inputGroup}>
 				<label htmlFor='idPassword'>Contraseña</label>
 				<input
+					className={errors.password && touched.password ? styles.invalid : ''}
 					id='idPassword'
 					name='password'
 					type='password'
 					value={values.password}
 					onChange={handleChange}
+					onBlur={onBlur}
 				/>
+				{touched.password ? (
+					<span className={styles.errorMsg}>{errors.password}</span>
+				) : null}
 			</div>
 			<button
 				className={styles.Form__loginBtn}

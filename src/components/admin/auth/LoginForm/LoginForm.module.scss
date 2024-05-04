@@ -49,4 +49,14 @@
       filter: none;
     }
   }
+
+  .invalid {
+    border: 1px solid $contrast-primary !important;
+  }
+
+  .errorMsg {
+    font-size: 1rem;
+    color: $contrast-primary;
+    padding: .2rem 0 0 .4rem;
+  }
 }

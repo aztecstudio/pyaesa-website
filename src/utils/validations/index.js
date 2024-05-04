@@ -1,4 +1,4 @@
-export const validateFormValues = values => {
+export const validateContactForm = values => {
 	const errors = {};
 	const regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 	const regexPhone = /^[1-9][0-9]*$/;
@@ -25,6 +25,20 @@ export const validateFormValues = values => {
 
 	if (!values.message) {
 		errors.message = 'Campo requerido!';
+	}
+
+	return errors;
+};
+
+export const validateLoginForm = values => {
+	const errors = {};
+
+	if (!values.email) {
+		errors.email = 'Campo requerido!';
+	}
+
+	if (!values.password) {
+		errors.password = 'Campo requerido!';
 	}
 
 	return errors;
