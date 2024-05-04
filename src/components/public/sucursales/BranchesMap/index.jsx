@@ -3,10 +3,13 @@ import {
 	Map,
 	AdvancedMarker,
 	InfoWindow,
+	useAdvancedMarkerRef,
 } from '@vis.gl/react-google-maps';
 import styles from './BranchesMap.module.scss';
 import { useState } from 'react';
 import { env } from '@/config/env';
+
+const { GOOGLE_MAPS_API_KEY, MAP_ID } = env;
 
 const CENTER = {
 	lat: 25.487347924579087,
@@ -15,7 +18,6 @@ const CENTER = {
 
 export const BranchesMap = ({ branches }) => {
 	const [openInfoWindow, setOpenInfoWindow] = useState({});
-	const { GOOGLE_MAPS_API_KEY, MAP_ID } = env;
 
 	const handleMarkerClick = id => {
 		setOpenInfoWindow({ [id]: true });
@@ -29,30 +31,53 @@ export const BranchesMap = ({ branches }) => {
 		<APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
 			<div className={styles.Container}>
 				<Map defaultCenter={CENTER} defaultZoom={11} mapId={MAP_ID}>
-					{branches.map(b => {
-						const markerKey = `marker-${b.id}`;
-						const infoWindowKey = `infoWindow-${b.id}`;
-
-						return (
-							<div key={markerKey}>
-								<AdvancedMarker
-									position={b.locationMap}
-									onClick={() => handleMarkerClick(b.id)}
-								/>
-								{openInfoWindow[b.id] && (
-									<InfoWindow
-										key={infoWindowKey}
-										position={b.locationMap}
-										onCloseClick={() => handleInfoWindowClose(b.id)}
-									>
-										<p>{b.title}</p>
-									</InfoWindow>
-								)}
-							</div>
-						);
-					})}
+					{branches.length > 0
+						? branches.map(b => (
+								<div key={`marker-${b.id}`}>
+									<MapMarker
+										branch={b}
+										openInfoWindow={openInfoWindow}
+										onClick={() => handleMarkerClick(b.id)}
+										onClose={handleInfoWindowClose}
+									/>
+								</div>
+							))
+						: null}
 				</Map>
 			</div>
 		</APIProvider>
 	) : null;
+};
+
+const MapMarker = ({ branch, openInfoWindow, onClick, onClose }) => {
+	const [markerRef, marker] = useAdvancedMarkerRef();
+	return (
+		<>
+			<AdvancedMarker
+				ref={markerRef}
+				position={branch.locationMap}
+				onClick={onClick}
+			/>
+			{openInfoWindow[branch.id] && (
+				<InfoWindow
+					anchor={marker}
+					onCloseClick={() => onClose(branch.id)}
+					maxWidth={300}
+				>
+					<div className='mapInfoWindow'>
+						<p>{branch.title}</p>
+						<p>{branch.address.full}</p>
+						<p>{branch.city}</p>
+						<a
+							href={`https://www.google.com/maps/search/?api=1&query=${branch.locationMap.lat},${branch.locationMap.lng}`}
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							Ver en Google Maps
+						</a>
+					</div>
+				</InfoWindow>
+			)}
+		</>
+	);
 };

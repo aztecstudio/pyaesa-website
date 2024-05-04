@@ -100,3 +100,26 @@ a {
   font-size: 1.6rem;
   font-weight: 600;
 }
+
+.mapInfoWindow {
+  @include flex(column);
+  gap: .4rem;
+
+  p,
+  a {
+    font-size: 1.3rem;
+  }
+
+  &>p:first-child {
+    font-weight: 700;
+  }
+
+  a {
+    color: $contrast-secondary;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
