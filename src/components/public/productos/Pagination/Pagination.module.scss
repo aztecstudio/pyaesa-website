@@ -1,0 +1,41 @@
+.Container {
+  @include flex(row, center, center);
+  gap: .1rem;
+
+  .Link {
+    @include flex($align: center);
+    padding: .6rem;
+    background-color: $contrast-secondary;
+    color: $color-primary;
+    border-radius: .4rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .Labels {
+    @include flex(column, center, center);
+    height: 36px;
+    padding: 0 1.5rem;
+    border-radius: .4rem;
+
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $text-color-soft;
+    }
+  }
+
+  .disabled {
+    background-color: $text-color-soft;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

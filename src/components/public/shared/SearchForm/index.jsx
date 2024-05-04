@@ -11,8 +11,10 @@ export const SearchForm = ({ children }) => {
 	const handleSearch = value => {
 		if (value.trim() === '') {
 			sp.delete('search');
+			sp.delete('page');
 		} else {
 			sp.set('search', value);
+			sp.set('page', 1);
 		}
 	};
 

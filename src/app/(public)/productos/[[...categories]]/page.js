@@ -5,7 +5,8 @@ import { getProducts, searchProducts } from '@/services/database';
 
 const ProductsPage = async props => {
 	const { categories } = props?.params;
-	const { search } = props?.searchParams;
+	const search = props?.searchParams?.search || '';
+	const page = props?.searchParams?.page || 1;
 	const { categoriesToShow, currentCategory, hasChildren } =
 		await filterCategoryData(categories);
 	let products = [];
@@ -26,7 +27,11 @@ const ProductsPage = async props => {
 					currentPath={categories?.join('/')}
 				/>
 			) : (
-				<ProductsList products={products} currentCategory={currentCategory} />
+				<ProductsList
+					products={products}
+					currentCategory={currentCategory}
+					currentPage={page}
+				/>
 			)}
 		</>
 	);

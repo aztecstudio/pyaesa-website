@@ -1,9 +1,18 @@
 import Image from 'next/image';
 import styles from './ProductsList.module.scss';
 import Link from 'next/link';
+import { Pagination } from '../Pagination';
 
-export const ProductsList = ({ products, currentCategory }) => {
+export const ProductsList = ({ products, currentCategory, currentPage }) => {
 	const { name: categoryName, description } = currentCategory ?? {};
+
+	const ITEMS_PER_PAGE = 6;
+	const offSet = (Number(currentPage) - 1) * ITEMS_PER_PAGE;
+	const lastItemToDisplay = Math.min(
+		currentPage * ITEMS_PER_PAGE,
+		products.length,
+	);
+	const paginatedProducts = products.slice(offSet, lastItemToDisplay);
 
 	return (
 		<section className={styles.Container}>
@@ -16,7 +25,7 @@ export const ProductsList = ({ products, currentCategory }) => {
 			<p className={styles.categoryDescription}>{description}</p>
 			<div className={styles.Grid}>
 				{products.length > 0
-					? products.map(product => (
+					? paginatedProducts.map(product => (
 							<div key={`product-${product.id}`} className={styles.Grid__item}>
 								<p>{product.title}</p>
 								<Image
@@ -30,6 +39,14 @@ export const ProductsList = ({ products, currentCategory }) => {
 						))
 					: null}
 			</div>
+			{products.length > ITEMS_PER_PAGE ? (
+				<Pagination
+					data={products}
+					itemsPerPage={ITEMS_PER_PAGE}
+					offSet={offSet}
+					lastItemToDisplay={lastItemToDisplay}
+				/>
+			) : null}
 		</section>
 	);
 };

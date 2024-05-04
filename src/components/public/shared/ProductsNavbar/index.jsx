@@ -24,7 +24,7 @@ export const ProductsNavbar = ({ categories, products = undefined }) => {
 			{products ? (
 				<SearchForm>
 					{products.length > 0 ? (
-						<span>Mostrando {products.length} resultados</span>
+						<span>{products.length} resultados</span>
 					) : null}
 				</SearchForm>
 			) : null}
