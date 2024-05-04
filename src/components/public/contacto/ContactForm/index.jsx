@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { inputProps } from '@/utils/consts';
-import { validateContactForm } from '@/utils/validations';
+import { formatInputPhone, validateContactForm } from '@/utils/validations';
 import { sendMail } from '@/services/mail';
 import { Loader } from '@/components';
 import { errorHandler } from '@/utils/errors';
@@ -28,12 +28,14 @@ export const ContactForm = () => {
 	const onBlur = ({ target }) =>
 		setTouched({ ...touched, [target.name]: true });
 
-	const handleChange = ({ target }) => {
+	const handleChange = ({ target: { name, value } }) => {
+		const formattedValue = name === 'phone' ? formatInputPhone(value) : value;
+
 		setForm({
 			...form,
 			values: {
 				...form.values,
-				[target.name]: target.value,
+				[name]: formattedValue,
 			},
 		});
 	};
