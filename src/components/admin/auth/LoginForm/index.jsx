@@ -7,6 +7,7 @@ import { Loader } from '@/components';
 import { errorHandler } from '@/utils/errors';
 import styles from './LoginForm.module.scss';
 import { validateLoginForm } from '@/utils/validations';
+import toast from 'react-hot-toast';
 
 const initialForm = {
 	values: { email: '', password: '' },
@@ -56,6 +57,7 @@ export const LoginForm = () => {
 			if (isOk) {
 				setForm(initialForm);
 				setTouched({});
+				toast.success('Inicio de sesión exitoso!');
 			}
 		} catch (error) {
 			errorHandler(error);

@@ -3,6 +3,7 @@ import { Power } from 'react-feather';
 import styles from './Header.module.scss';
 import { logout } from '@/services/auth';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 export const Header = () => {
 	const router = useRouter();
@@ -10,6 +11,9 @@ export const Header = () => {
 	const handleLogout = async () => {
 		await logout();
 		router.push('/admin/auth');
+		setTimeout(() => {
+			toast.success('Se cerró la sesión!');
+		}, 500);
 	};
 
 	return (
