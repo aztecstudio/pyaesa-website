@@ -22,3 +22,4 @@ export { InputFile } from './admin/promociones/InputFile';
 export { HtmlParser } from './shared/HtmlParser';
 export { Breadcrumbs } from './shared/Breadcrumbs';
 export { Loader } from './shared/Loader';
+export { NoData } from './shared/NoData';

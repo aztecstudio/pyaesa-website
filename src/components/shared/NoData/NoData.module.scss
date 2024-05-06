@@ -1,0 +1,18 @@
+.Container {
+  @include flex(column, center, center);
+  padding-top: 2rem;
+
+  .Title {
+    color: $text-color-soft;
+    font-weight: 600;
+  }
+
+  .Image {
+    max-width: 400px;
+  }
+
+  .Link {
+    @include btn(260px, $contrast-primary);
+    transition: opacity .4s ease;
+  }
+}

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from './PromoImage.module.scss';
 import { getPromoImage } from '@/services/files';
 import { unstable_cache } from 'next/cache';
+import { NoData } from '@/components';
 
 export const PromoImage = async () => {
 	const imageUrl = await unstable_cache(
@@ -25,7 +26,9 @@ export const PromoImage = async () => {
 					height={1690}
 					alt='Imagén de promoción del mes'
 				/>
-			) : null}
+			) : (
+				<NoData item='promociones' />
+			)}
 		</div>
 	);
 };

@@ -27,7 +27,7 @@ export const BranchesMap = ({ branches }) => {
 		setOpenInfoWindow({ [id]: false });
 	};
 
-	return GOOGLE_MAPS_API_KEY ? (
+	return (
 		<APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
 			<div className={styles.Container}>
 				<Map defaultCenter={CENTER} defaultZoom={11} mapId={MAP_ID}>
@@ -46,7 +46,7 @@ export const BranchesMap = ({ branches }) => {
 				</Map>
 			</div>
 		</APIProvider>
-	) : null;
+	);
 };
 
 const MapMarker = ({ branch, openInfoWindow, onClick, onClose }) => {
