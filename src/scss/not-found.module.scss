@@ -1,0 +1,32 @@
+.Container {
+  @include flex(column, center, center);
+  height: 100vh;
+  margin: auto;
+  padding: 2rem;
+  background-color: $color-primary;
+  text-align: center;
+
+  .Title {
+    font-weight: 700;
+    color: $text-color;
+  }
+
+  svg {
+    max-width: 500px;
+  }
+
+  .Text {
+    font-weight: 600;
+  }
+
+  .Link {
+    @include btn(260px, $contrast-primary);
+    margin-top: 2rem;
+    transition: opacity .4s ease;
+  }
+
+  @include tablet {
+    width: 90%;
+    padding: 4rem;
+  }
+}

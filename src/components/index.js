@@ -23,3 +23,4 @@ export { HtmlParser } from './shared/HtmlParser';
 export { Breadcrumbs } from './shared/Breadcrumbs';
 export { Loader } from './shared/Loader';
 export { NoData } from './shared/NoData';
+export { Svg404 } from './shared/Svg404';
