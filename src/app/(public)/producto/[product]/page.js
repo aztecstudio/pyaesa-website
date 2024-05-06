@@ -2,6 +2,15 @@ import { ProductDetail } from '@/components';
 import { ProductsNavbar } from '@/components/public/shared/ProductsNavbar';
 import { getCategoryInfo, getProductByHandle } from '@/services/database';
 
+export async function generateMetadata({ params }) {
+	const product = await getProductByHandle(params.product);
+
+	return {
+		title: `PYAESA - ${product.title}`,
+		description: product.excerpt,
+	};
+}
+
 const ProductPage = async props => {
 	const { params } = props;
 	const product = await getProductByHandle(params.product);

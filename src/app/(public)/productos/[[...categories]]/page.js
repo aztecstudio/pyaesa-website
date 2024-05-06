@@ -3,6 +3,16 @@ import { ProductsNavbar } from '@/components/public/shared/ProductsNavbar';
 import { filterCategoryData } from '@/helpers';
 import { getProducts, searchProducts } from '@/services/database';
 
+export async function generateMetadata({ params }) {
+	const { categories } = params;
+	const { currentCategory } = await filterCategoryData(categories);
+
+	return {
+		title: `PYAESA - ${!currentCategory?.name ? 'Nuestros productos' : currentCategory.name}`,
+		description: currentCategory.description,
+	};
+}
+
 const ProductsPage = async props => {
 	const { categories } = props?.params;
 	const search = props?.searchParams?.search || '';

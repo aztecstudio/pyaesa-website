@@ -11,6 +11,9 @@ export const metadata = {
 	title: 'Pinturas y Acabados Especiales S.A. de C.V.',
 	description:
 		'Aquí podrás encontrar todo lo que necesites sobre pinturas y acabados especiales en México',
+	icons: {
+		icon: '/favicon.ico',
+	},
 };
 
 export default function RootLayout({ children }) {
