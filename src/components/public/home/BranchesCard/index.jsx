@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import styles from './BranchesCard.module.scss';
 import Link from 'next/link';
+import { LOCATION_IMAGE } from '@/utils/consts';
+import styles from './BranchesCard.module.scss';
 
 export const BranchesCard = () => {
 	return (
@@ -19,7 +20,7 @@ export const BranchesCard = () => {
 				</div>
 				<div className={styles.BranchesCard__img}>
 					<Image
-						src='/images/location.png'
+						src={LOCATION_IMAGE}
 						width={640}
 						height={364}
 						alt='Simbolo de ubicación'

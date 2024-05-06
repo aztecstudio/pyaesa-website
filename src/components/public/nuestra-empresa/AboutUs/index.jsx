@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ABOUT_US_IMAGE } from '@/utils/consts';
 import styles from './AboutUs.module.scss';
 
 export const AboutUs = () => {
@@ -9,7 +10,7 @@ export const AboutUs = () => {
 			</h2>
 			<div className={styles.AboutUs__description}>
 				<Image
-					src={`/images/about-us.jpg`}
+					src={ABOUT_US_IMAGE}
 					alt={`Acerca de nosotros`}
 					width={960}
 					height={540}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ENVIRONMENT_IMAGE } from '@/utils/consts';
 import styles from './Environment.module.scss';
 
 export const Environment = () => {
@@ -9,7 +10,7 @@ export const Environment = () => {
 			</h3>
 			<div className={styles.Environment__container}>
 				<Image
-					src={`/images/medio-ambiente.jpg`}
+					src={ENVIRONMENT_IMAGE}
 					alt={`Medio ambiente y comunidad`}
 					width={990}
 					height={560}

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { COMMITMENT_IMAGE, MISSION_IMAGE } from '@/utils/consts';
 import styles from './AboutUsGrid.module.scss';
 
 export const AboutUsGrid = () => {
@@ -9,7 +10,7 @@ export const AboutUsGrid = () => {
 					<div className={styles.AboutUsGrid__item__img}>
 						<p>Compromiso</p>
 						<Image
-							src={`/images/shw-compromiso.jpg`}
+							src={COMMITMENT_IMAGE}
 							alt={`Compromiso`}
 							width={990}
 							height={560}
@@ -31,7 +32,7 @@ export const AboutUsGrid = () => {
 					<div className={styles.AboutUsGrid__item__img}>
 						<p>Misión</p>
 						<Image
-							src={`/images/shw-mision.jpg`}
+							src={MISSION_IMAGE}
 							alt={`Misión`}
 							width={990}
 							height={560}

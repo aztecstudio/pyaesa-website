@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { inputProps } from '@/utils/consts';
+import { INPUT_PROPS } from '@/utils/consts';
 import { formatInputPhone, validateContactForm } from '@/utils/validations';
 import { sendMail } from '@/services/mail';
 import { Loader } from '@/components';
@@ -61,7 +61,7 @@ export const ContactForm = () => {
 
 	return (
 		<form className={styles.Form} onSubmit={handleSubmit}>
-			{inputProps.map(input => {
+			{INPUT_PROPS.map(input => {
 				const inputInvalid =
 					errors[input.name] && touched[input.name] ? styles.invalid : '';
 

@@ -6,7 +6,7 @@ export const Footer = () => {
 		<footer className={styles.Footer}>
 			<section className={styles.Footer__logo}>
 				<Image
-					src='/images/sw-logo.png'
+					src='/sw-logo.png'
 					width={1339}
 					height={388}
 					alt='Sherwin Williams logo'

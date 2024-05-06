@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import { HERO_SLIDES } from '@/utils/consts';
 import styles from './Hero.module.scss';
 
 export const Hero = () => {
@@ -18,11 +19,11 @@ export const Hero = () => {
 				}}
 				effect={'fade'}
 			>
-				{[1, 2, 3, 4].map(slide => (
-					<SwiperSlide key={`slide-${slide}`}>
+				{HERO_SLIDES.map((slide, index) => (
+					<SwiperSlide key={`slide-${index}`}>
 						<Image
-							src={`/images/slide-${slide}.jpg`}
-							alt={`Slide-${slide} image`}
+							src={slide}
+							alt={`Slide-${index} image`}
 							width={1240}
 							height={304}
 							priority

@@ -22,7 +22,7 @@ export const Header = () => {
 			<nav className={styles.Header__navbar}>
 				<Link href='/' className={styles.Header__navbar__logo}>
 					<Image
-						src='/images/sw-logo-header.png'
+						src='/sw-logo-header.png'
 						width={208}
 						height={388}
 						alt='Sherwin Williams logo'
