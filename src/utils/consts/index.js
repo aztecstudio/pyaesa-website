@@ -6,22 +6,27 @@ export const PAGES = [
 	{
 		pathname: '/productos',
 		label: 'Productos',
+		handle: 'productos',
 	},
 	{
 		pathname: '/promociones',
 		label: 'Promociones',
+		handle: 'promociones',
 	},
 	{
 		pathname: '/sucursales',
 		label: 'Sucursales',
+		handle: 'sucursales',
 	},
 	{
 		pathname: '/contacto',
 		label: 'Contacto',
+		handle: 'contacto',
 	},
 	{
 		pathname: '/nuestra-empresa',
 		label: 'Nuestra empresa',
+		handle: 'nuestra-empresa',
 	},
 ];
 

@@ -11,18 +11,25 @@ export const Menu = ({ isHidden, setIsHidden }) => {
 		<div className={`${styles.Menu} ${isHidden ? '' : styles.visible}`}>
 			<section className={styles.Menu__containerList}>
 				<ul>
-					{PAGES.map((item, i) => (
-						<li key={`${item.label}-${i}`}>
-							<Link
-								href={item.pathname}
-								as={item.pathname}
-								onClick={() => setIsHidden(true)}
-								className={pathname === item.pathname ? styles.linkActive : ''}
-							>
-								<span>{item.label}</span>
-							</Link>
-						</li>
-					))}
+					{PAGES.map((item, i) => {
+						const isActive =
+							pathname === '/'
+								? pathname === item.pathname
+								: pathname.includes(item.handle);
+
+						return (
+							<li key={`${item.label}-${i}`}>
+								<Link
+									href={item.pathname}
+									as={item.pathname}
+									onClick={() => setIsHidden(true)}
+									className={isActive ? styles.linkActive : ''}
+								>
+									<span>{item.label}</span>
+								</Link>
+							</li>
+						);
+					})}
 				</ul>
 			</section>
 			<div className={styles.Menu__divider}></div>
