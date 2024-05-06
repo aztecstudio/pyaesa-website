@@ -5,17 +5,23 @@ import { unstable_cache } from 'next/cache';
 import { NoData } from '@/components';
 
 export const PromoImage = async () => {
-	const imageUrl = await unstable_cache(
-		async () => {
-			const image = await getPromoImage();
-			return image;
-		},
-		undefined,
-		{
-			tags: ['promo_image'],
-			revalidate: false,
-		},
-	)();
+	let imageUrl;
+
+	try {
+		imageUrl = await unstable_cache(
+			async () => {
+				const image = await getPromoImage();
+				return image;
+			},
+			undefined,
+			{
+				tags: ['promo_image'],
+				revalidate: false,
+			},
+		)();
+	} catch (error) {
+		console.error(error);
+	}
 
 	return (
 		<div className={styles.ImageContainer}>
