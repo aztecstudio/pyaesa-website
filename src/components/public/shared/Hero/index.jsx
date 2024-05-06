@@ -24,8 +24,8 @@ export const Hero = () => {
 						<Image
 							src={slide}
 							alt={`Slide-${index} image`}
-							width={1240}
-							height={304}
+							width={1750}
+							height={562}
 							priority
 						/>
 					</SwiperSlide>
