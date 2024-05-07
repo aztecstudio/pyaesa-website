@@ -16,17 +16,17 @@ export const Footer = () => {
 			<div className={styles.Footer__divider}></div>
 			<section className={styles.Footer__info}>
 				<p>
-					&copy;{new Date().getFullYear()} <span>PYAESA</span> &nbsp;|&nbsp; All
-					rights reserved.
+					&copy;{new Date().getFullYear()} <span>PYAESA</span> &nbsp;|&nbsp;
+					Todos los derechos reservados.
 				</p>
 				<span>
 					Desarrollado con 💚 por{' '}
 					<a
-						href='https://chrod.netlify.app/'
+						href='https://aztecstudio.net/'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						CHRod
+						AztecStudio
 					</a>
 				</span>
 			</section>

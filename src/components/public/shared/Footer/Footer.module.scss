@@ -27,14 +27,24 @@
     justify-content: space-between;
     align-items: center;
 
+    p>span {
+      font-weight: 600;
+    }
+
     p,
     span {
       font-size: .8rem;
       font-weight: 300;
 
       a {
+        position: relative;
         font-size: .8rem;
+        font-weight: 600;
         color: $color-primary;
+
+        &:hover {
+          border-bottom: 1px solid $color-primary;
+        }
       }
     }
   }
