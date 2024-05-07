@@ -1,3 +1,7 @@
+export const metadata = {
+	title: 'PYAESA - Admin Panel',
+};
+
 const AdminPage = () => {
 	return (
 		<section>

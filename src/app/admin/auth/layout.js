@@ -1,5 +1,9 @@
 import styles from './AuthLayout.module.scss';
 
+export const metadata = {
+	title: 'PYAESA - Admin Panel | Inicio de sesión',
+};
+
 const AuthLayout = ({ children }) => {
 	return (
 		<main className={styles.Container}>
