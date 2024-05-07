@@ -7,6 +7,7 @@
   padding: 0 2rem;
   @include flex(row, space-between, center);
   color: $color-primary;
+  background-color: $color-secondary;
 
   @include mobileLg {
     padding: 0 6rem;

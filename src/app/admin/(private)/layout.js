@@ -7,10 +7,10 @@ export const metadata = {
 
 const PrivateLayout = ({ children }) => {
 	return (
-		<main className={styles.Container}>
+		<>
 			<AdminHeader />
-			{children}
-		</main>
+			<main className={styles.Container}>{children}</main>
+		</>
 	);
 };
 
