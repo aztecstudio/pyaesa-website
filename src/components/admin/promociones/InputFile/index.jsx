@@ -77,6 +77,7 @@ export const InputFile = () => {
 					)}
 				</div>
 				<div className={styles.FileUpload__text}>
+					{file ? <span className={styles.fileName}>{file?.name}</span> : null}
 					<span>
 						{!file
 							? 'Click para cargar imágen desde tu pc'
