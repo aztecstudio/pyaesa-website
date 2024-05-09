@@ -11,7 +11,7 @@ export const Branches = ({ branches }) => {
 
 	return (
 		<>
-			<ToggleView setIsGrid={setIsGrid} />
+			<ToggleView isGrid={isGrid} setIsGrid={setIsGrid} />
 			{isGrid ? (
 				branches?.length > 0 ? (
 					<div className={styles.BranchesGrid}>
