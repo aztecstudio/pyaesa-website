@@ -9,23 +9,29 @@ import { NoData } from '@/components';
 export const MainProducts = async () => {
 	const products = await getProducts();
 	const productsToDisplay = 4;
-	const mainProducts = await unstable_cache(
-		async () => {
-			const data = getRandomProducts(products, productsToDisplay);
-			return data;
-		},
-		undefined,
-		{
-			revalidate: 43200,
-		},
-	)();
+	let mainProducts;
+
+	try {
+		mainProducts = await unstable_cache(
+			async () => {
+				const data = getRandomProducts(products, productsToDisplay);
+				return data;
+			},
+			undefined,
+			{
+				revalidate: 43200,
+			},
+		)();
+	} catch (error) {
+		console.error(error);
+	}
 
 	return (
 		<section>
 			<h2>
 				Productos <span>recomendados</span>
 			</h2>
-			{mainProducts.length > 0 ? (
+			{mainProducts?.length > 0 ? (
 				<div className={styles.GridContainer}>
 					{mainProducts.map(product => (
 						<div

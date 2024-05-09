@@ -1,12 +1,16 @@
 export const getRandomProducts = (array, numberOfProducts) => {
-	const result = [];
+	try {
+		const result = [];
 
-	while (result.length < numberOfProducts) {
-		const randomIndex = Math.floor(Math.random() * array.length);
-		if (result.indexOf(array[randomIndex]) === -1) {
-			result.push(array[randomIndex]);
+		while (result.length < numberOfProducts) {
+			const randomIndex = Math.floor(Math.random() * array.length);
+			if (result.indexOf(array[randomIndex]) === -1) {
+				result.push(array[randomIndex]);
+			}
 		}
-	}
 
-	return result;
+		return result;
+	} catch (error) {
+		console.error(error);
+	}
 };

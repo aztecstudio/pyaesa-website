@@ -9,6 +9,7 @@ const ERRORS = {
 	'wrong-password': invalidCredsErrorMsg,
 	'invalid-credential': invalidCredsErrorMsg,
 	'user-disabled': 'El usuario ha sido deshabilitado!',
+	'storage/unauthorized': 'No tienes autorización para realizar esta acción!',
 	defaultError: 'Ocurrió un error. Por favor intentalo más tarde!',
 };
 

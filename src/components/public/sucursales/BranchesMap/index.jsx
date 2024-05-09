@@ -31,7 +31,7 @@ export const BranchesMap = ({ branches }) => {
 		<APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
 			<div className={styles.Container}>
 				<Map defaultCenter={CENTER} defaultZoom={11} mapId={MAP_ID}>
-					{branches.length > 0
+					{branches?.length > 0
 						? branches.map(b => (
 								<div key={`marker-${b.id}`}>
 									<MapMarker

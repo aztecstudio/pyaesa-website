@@ -11,9 +11,9 @@ export const ProductsList = ({ products, currentCategory, currentPage }) => {
 	const offSet = (Number(currentPage) - 1) * ITEMS_PER_PAGE;
 	const lastItemToDisplay = Math.min(
 		currentPage * ITEMS_PER_PAGE,
-		products.length,
+		products?.length,
 	);
-	const paginatedProducts = products.slice(offSet, lastItemToDisplay);
+	const paginatedProducts = products?.slice(offSet, lastItemToDisplay);
 
 	return (
 		<section className={styles.Container}>
@@ -24,7 +24,7 @@ export const ProductsList = ({ products, currentCategory, currentPage }) => {
 				<span>{categoryName}</span>
 			</h3>
 			<p className={styles.categoryDescription}>{description}</p>
-			{products.length > 0 ? (
+			{products?.length > 0 ? (
 				<div className={styles.Grid}>
 					{paginatedProducts.map(product => (
 						<div key={`product-${product.id}`} className={styles.Grid__item}>
@@ -42,7 +42,7 @@ export const ProductsList = ({ products, currentCategory, currentPage }) => {
 			) : (
 				<NoData />
 			)}
-			{products.length > ITEMS_PER_PAGE ? (
+			{products?.length > ITEMS_PER_PAGE ? (
 				<Pagination
 					data={products}
 					itemsPerPage={ITEMS_PER_PAGE}
