@@ -19,7 +19,7 @@ export const MainProducts = async () => {
 			},
 			undefined,
 			{
-				revalidate: 60 * 60 * 12,
+				revalidate: 30,
 			},
 		)();
 	} catch (error) {
