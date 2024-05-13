@@ -5,6 +5,7 @@ import { getProducts } from '@/services/database';
 import { getRandomProducts } from '@/utils/products';
 import { unstable_cache } from 'next/cache';
 import { NoData } from '@/components';
+import { env } from '@/config/env';
 
 export const MainProducts = async () => {
 	const products = await getProducts();
@@ -19,7 +20,7 @@ export const MainProducts = async () => {
 			},
 			undefined,
 			{
-				revalidate: 60 * 60 * 12,
+				revalidate: Number(env.CACHE_REVALIDATION_TIME),
 			},
 		)();
 	} catch (error) {

@@ -10,4 +10,5 @@ export const env = {
 	EMAIL_USER: process.env.EMAIL_USER,
 	EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
 	EMAIL_TO: process.env.EMAIL_TO,
+	CACHE_REVALIDATION_TIME: process.env.NEXT_PUBLIC_CACHE_REVALIDATION_TIME,
 };
