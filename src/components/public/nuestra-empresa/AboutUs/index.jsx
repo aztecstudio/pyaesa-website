@@ -19,7 +19,7 @@ export const AboutUs = () => {
 				<p>
 					Pinturas y Acabados Especiales es una empresa establecida en el estado
 					de Coahuila en las ciudades de Saltillo y Ramos Arizpe, contamos con
-					la confianza y respaldo para ser distribuidores exclusivos para la
+					la confianza y respaldo para ser distribuidores certificados para la
 					zona Sur Este del Estado de Coahuila de la marca Sherwin-Williams.
 					Sherwin-Williams está orgullosa de ser la primera compañía de pinturas
 					de Estados Unidos en recibir el registro ISO 9002 en nuestras
