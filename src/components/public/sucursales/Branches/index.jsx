@@ -16,28 +16,28 @@ export const Branches = ({ branches }) => {
 				branches?.length > 0 ? (
 					<div className={styles.BranchesGrid}>
 						{branches.map(branch => (
-							<div key={branch.id} className={styles.BranchesGrid__item}>
+							<div key={branch?.id} className={styles.BranchesGrid__item}>
 								<div className={styles.BranchesGrid__item__title}>
-									<h3>{branch.title}</h3>
+									<h3>{branch?.title}</h3>
 								</div>
 								<div className={styles.BranchesGrid__item__info}>
 									<div className={styles.location}>
 										<MapPin size={18} />
 										<span>
-											{branch.address.full}, {branch.address.notes}
+											{branch?.address?.full}, {branch?.address?.notes}
 										</span>
 									</div>
 									<div className={styles.phone}>
 										<Phone size={18} />
-										{branch.phones.join(' | ')}
+										{branch?.phones?.join(' | ')}
 									</div>
 									<div className={styles.email}>
 										<Mail size={18} />
-										{branch.email}
+										{branch?.email}
 									</div>
 									<div className={styles.city}>
 										<Map size={18} />
-										{branch.city}
+										{branch?.city}
 									</div>
 								</div>
 							</div>
